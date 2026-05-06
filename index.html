@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Il Cielo Sopra — Alessia Semeraro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream: #f7f4ef;
+      --cream-dark: #ede9e1;
+      --ink: #1a1814;
+      --ink-mid: #4a4540;
+      --ink-light: #8a8178;
+      --brass: #b8975a;
+      --brass-light: #d4b47c;
+      --brass-pale: #f0e8d8;
+      --white: #fdfcfa;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── GRAIN OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.4;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 28px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      mix-blend-mode: multiply;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--brass); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 140px 60px 80px;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 32px;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(3.5rem, 6vw, 7rem);
+      line-height: 1.0;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--brass);
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--ink-light);
+      margin-bottom: 48px;
+      max-width: 380px;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--brass);
+      padding-bottom: 4px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    .hero-cta:hover { color: var(--brass); }
+
+    .hero-right {
+      background: var(--cream-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 60%, var(--brass-pale) 100%);
+    }
+
+    .hero-ornament {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 280px;
+      height: 280px;
+      border: 1px solid var(--brass-light);
+      border-radius: 50%;
+      opacity: 0.3;
+    }
+
+    .hero-ornament::before {
+      content: '';
+      position: absolute;
+      top: 20px; left: 20px; right: 20px; bottom: 20px;
+      border: 1px solid var(--brass-light);
+      border-radius: 50%;
+    }
+
+    .hero-ornament::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 8px; height: 8px;
+      background: var(--brass);
+      border-radius: 50%;
+    }
+
+    .hero-text-vertical {
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      white-space: nowrap;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 48px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-scroll span {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, var(--brass), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(0.7); }
+    }
+
+    /* ── SEZIONE FILOSOFIA ── */
+    #filosofia {
+      padding: 160px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .section-label {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--brass);
+      padding-top: 12px;
+    }
+
+    .filosofia-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 40px;
+    }
+
+    .filosofia-body h2 em {
+      font-style: italic;
+      color: var(--brass);
+    }
+
+    .filosofia-body p {
+      font-size: 1.0rem;
+      color: var(--ink-mid);
+      margin-bottom: 24px;
+      max-width: 600px;
+    }
+
+    .rule {
+      width: 60px;
+      height: 1px;
+      background: var(--brass);
+      margin: 48px 0;
+    }
+
+    /* ── SEZIONE DESIGNER ── */
+    #designer {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 140px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #designer::before {
+      content: 'AS';
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30vw;
+      font-weight: 300;
+      color: rgba(255,255,255,0.03);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .designer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .designer-body .section-label { color: var(--brass-light); }
+
+    .designer-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.15;
+      color: var(--cream);
+      margin: 24px 0 40px;
+    }
+
+    .designer-body p {
+      font-size: 1.0rem;
+      color: rgba(247,244,239,0.7);
+      margin-bottom: 24px;
+      max-width: 580px;
+    }
+
+    .designer-credentials {
+      margin-top: 60px;
+    }
+
+    .designer-credentials h3 {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--brass-light);
+      margin-bottom: 24px;
+    }
+
+    .credential-item {
+      border-top: 1px solid rgba(247,244,239,0.1);
+      padding: 16px 0;
+      font-size: 0.9rem;
+      color: rgba(247,244,239,0.6);
+    }
+
+    .credential-item strong {
+      display: block;
+      color: var(--cream);
+      font-weight: 300;
+      margin-bottom: 4px;
+    }
+
+    .designer-aside {
+      padding-top: 80px;
+    }
+
+    .stat-block {
+      border-left: 1px solid var(--brass);
+      padding-left: 28px;
+      margin-bottom: 48px;
+    }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--brass-light);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(247,244,239,0.5);
+      margin-top: 8px;
+    }
+
+    .luxury-list {
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    .luxury-list li {
+      font-size: 0.85rem;
+      color: rgba(247,244,239,0.55);
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(247,244,239,0.07);
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+    }
+
+    /* ── COLLEZIONI ── */
+    #collezioni {
+      padding: 160px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      margin-bottom: 100px;
+      align-items: end;
+    }
+
+    .section-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      line-height: 1.15;
+      color: var(--ink);
+    }
+
+    .section-header h2 em { font-style: italic; color: var(--brass); }
+
+    .section-intro {
+      font-size: 1.0rem;
+      color: var(--ink-mid);
+      max-width: 520px;
+      align-self: end;
+    }
+
+    .collezioni-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+    }
+
+    .collezione-card {
+      background: var(--white);
+      padding: 60px 50px;
+      position: relative;
+      transition: background 0.4s;
+      cursor: default;
+    }
+
+    .collezione-card:hover {
+      background: var(--brass-pale);
+    }
+
+    .collezione-card:nth-child(3) {
+      background: var(--cream-dark);
+    }
+
+    .collezione-card:nth-child(3):hover {
+      background: var(--brass-pale);
+    }
+
+    .collezione-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      font-weight: 300;
+      color: var(--brass-pale);
+      position: absolute;
+      top: 24px;
+      right: 40px;
+      line-height: 1;
+      transition: color 0.4s;
+    }
+
+    .collezione-card:hover .collezione-number {
+      color: var(--brass-light);
+    }
+
+    .collezione-tag {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 20px;
+    }
+
+    .collezione-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 2rem;
+      color: var(--ink);
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .collezione-card p {
+      font-size: 0.9rem;
+      color: var(--ink-mid);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .collezione-price {
+      margin-top: 32px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      border-top: 1px solid var(--cream-dark);
+      padding-top: 20px;
+    }
+
+    .collezione-price span {
+      color: var(--brass);
+    }
+
+    /* Card grande Jade */
+    .collezione-card.jade {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    .jade .collezione-tag { color: var(--brass-light); }
+    .jade h3 { color: var(--cream); }
+    .jade p { color: rgba(247,244,239,0.65); }
+    .jade .collezione-price {
+      color: rgba(247,244,239,0.4);
+      border-top-color: rgba(247,244,239,0.1);
+    }
+    .jade .collezione-price span { color: var(--brass-light); }
+    .jade .collezione-number { color: rgba(255,255,255,0.05); }
+    .jade:hover { background: #201e1a; }
+
+    .jade-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .jade-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      color: var(--brass-light);
+      margin-bottom: 32px;
+    }
+
+    /* Halo card */
+    .collezione-card.halo {
+      background: var(--cream-dark);
+      border-left: 3px solid var(--brass);
+    }
+
+    /* Sale card */
+    .collezione-card.sale {
+      background: var(--white);
+    }
+
+    /* ── AEMOTIONS ── */
+    #aemotions {
+      padding: 160px 60px;
+      background: var(--cream-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #aemotions::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--brass), transparent);
+    }
+
+    .aemotions-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 120px;
+      align-items: center;
+    }
+
+    .aemotions-left .section-label { margin-bottom: 32px; }
+
+    .aemotions-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 40px;
+    }
+
+    .aemotions-left h2 em {
+      font-style: italic;
+      color: var(--brass);
+    }
+
+    .aemotions-left p {
+      font-size: 1.0rem;
+      color: var(--ink-mid);
+      margin-bottom: 24px;
+    }
+
+    .aemotions-right {
+      position: relative;
+    }
+
+    .aemotions-box {
+      background: var(--ink);
+      padding: 60px 50px;
+      color: var(--cream);
+      position: relative;
+    }
+
+    .aemotions-box::before {
+      content: '';
+      position: absolute;
+      top: -12px; left: 12px;
+      right: 12px; bottom: -12px;
+      border: 1px solid var(--brass);
+      z-index: -1;
+    }
+
+    .aemotions-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.8rem;
+      color: var(--brass-light);
+      margin-bottom: 24px;
+    }
+
+    .aemotions-box p {
+      font-size: 0.9rem;
+      color: rgba(247,244,239,0.65);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .aemotions-tag {
+      display: inline-block;
+      margin-top: 16px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brass-light);
+      border: 1px solid var(--brass);
+      padding: 8px 20px;
+    }
+
+    /* ── COACHING ── */
+    #coaching {
+      padding: 160px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .coaching-header {
+      margin-bottom: 100px;
+    }
+
+    .coaching-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      line-height: 1.0;
+      color: var(--ink);
+      max-width: 700px;
+    }
+
+    .coaching-header h2 em {
+      font-style: italic;
+      color: var(--brass);
+    }
+
+    .coaching-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-bottom: 100px;
+      align-items: start;
+    }
+
+    .coaching-manifesto {
+      border-left: 2px solid var(--brass);
+      padding-left: 32px;
+    }
+
+    .coaching-manifesto p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    .coaching-manifesto p.no-italic {
+      font-style: normal;
+      font-size: 1.1rem;
+      color: var(--ink-mid);
+    }
+
+    .coaching-right p {
+      font-size: 0.95rem;
+      color: var(--ink-mid);
+      margin-bottom: 20px;
+    }
+
+    .coaching-formats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 60px;
+    }
+
+    .format-card {
+      background: var(--white);
+      padding: 48px 36px;
+      transition: background 0.3s;
+    }
+
+    .format-card:hover {
+      background: var(--brass-pale);
+    }
+
+    .format-icon {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--brass);
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+
+    .format-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.3rem;
+      color: var(--ink);
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .format-card p {
+      font-size: 0.88rem;
+      color: var(--ink-mid);
+      line-height: 1.75;
+    }
+
+    /* ── I DUETTI ── */
+    #duetti {
+      background: var(--ink);
+      padding: 140px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .duetti-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .duetti-left {
+      position: relative;
+    }
+
+    .duetti-visual {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--ink-mid);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .duetti-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(184,151,90,0.15) 0%, transparent 60%);
+    }
+
+    .duetti-visual-text {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      right: 40px;
+    }
+
+    .duetti-visual-text span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      font-weight: 300;
+      color: rgba(184,151,90,0.2);
+      line-height: 1;
+    }
+
+    .duetti-right .section-label { color: var(--brass-light); }
+
+    .duetti-right h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      line-height: 1.1;
+      color: var(--cream);
+      margin: 24px 0 40px;
+    }
+
+    .duetti-right h2 em {
+      font-style: italic;
+      color: var(--brass-light);
+    }
+
+    .duetti-right p {
+      font-size: 0.95rem;
+      color: rgba(247,244,239,0.65);
+      margin-bottom: 20px;
+      line-height: 1.75;
+    }
+
+    .duetti-rule {
+      width: 60px;
+      height: 1px;
+      background: var(--brass);
+      margin: 40px 0;
+    }
+
+    .duetti-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--brass-light);
+      line-height: 1.6;
+    }
+
+    /* ── CONTACT / FOOTER ── */
+    #contatti {
+      padding: 140px 60px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+
+    .contact-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.5rem, 4vw, 4.5rem);
+      line-height: 1.05;
+      color: var(--ink);
+      margin-bottom: 40px;
+    }
+
+    .contact-left h2 em {
+      font-style: italic;
+      color: var(--brass);
+    }
+
+    .contact-left p {
+      font-size: 0.95rem;
+      color: var(--ink-mid);
+      margin-bottom: 20px;
+      max-width: 440px;
+    }
+
+    .contact-links {
+      margin-top: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-decoration: none;
+      color: var(--ink);
+      transition: color 0.3s;
+    }
+
+    .contact-link:hover { color: var(--brass); }
+
+    .contact-link-label {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      width: 100px;
+    }
+
+    .contact-link-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+    }
+
+    .contact-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .skyline-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 8rem);
+      font-weight: 300;
+      color: var(--cream-dark);
+      line-height: 0.9;
+      text-align: right;
+      user-select: none;
+    }
+
+    footer {
+      border-top: 1px solid var(--cream-dark);
+      padding: 40px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--ink-light);
+    }
+
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--brass);
+    }
+
+    /* ── DIVIDERS ── */
+    .full-rule {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--cream-dark), transparent);
+      margin: 0;
+    }
+
+    /* ── FADE IN ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 24px 32px; }
+      .nav-links { display: none; }
+
+      #hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 120px 32px 60px; }
+      .hero-right { height: 300px; }
+
+      #filosofia,
+      .designer-inner,
+      .aemotions-inner,
+      .duetti-inner,
+      #contatti { grid-template-columns: 1fr; gap: 48px; padding: 80px 32px; }
+
+      #collezioni,
+      #coaching { padding: 80px 32px; }
+
+      .section-header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 60px; }
+      .collezioni-grid { grid-template-columns: 1fr; }
+      .collezione-card.jade { grid-template-columns: 1fr; }
+      .coaching-intro { grid-template-columns: 1fr; gap: 40px; }
+      .coaching-formats { grid-template-columns: 1fr; }
+
+      footer { flex-direction: column; gap: 16px; text-align: center; padding: 40px 32px; }
+
+      .skyline-text { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">Il Cielo Sopra</a>
+    <ul class="nav-links">
+      <li><a href="#filosofia">Filosofia</a></li>
+      <li><a href="#designer">Designer</a></li>
+      <li><a href="#collezioni">Collezioni</a></li>
+      <li><a href="#coaching">Coaching</a></li>
+      <li><a href="#aemotions">AEmotions</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Contemporary Jewellery &amp; Coaching</p>
+      <h1 class="hero-title">Il Cielo<br><em>Sopra</em></h1>
+      <p class="hero-subtitle">Sopra ogni cielo ce n'è un altro.<br>Infinito, carico di possibilità.</p>
+      <a href="#filosofia" class="hero-cta">Scopri il progetto</a>
+    </div>
+    <div class="hero-right">
+      <div class="hero-ornament"></div>
+      <span class="hero-text-vertical">Alessia Semeraro — Contemporary Jewellery Designer-Maker</span>
+    </div>
+    <div class="hero-scroll">
+      <span>Scorri</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <div class="full-rule"></div>
+
+  <!-- FILOSOFIA -->
+  <section id="filosofia">
+    <div class="section-label fade-in">Il progetto</div>
+    <div class="filosofia-body">
+      <h2 class="fade-in">Sopra ogni cielo<br>ce n'è un <em>altro</em></h2>
+      <p class="fade-in">"Il cielo sopra" nasce dall'idea che sopra ogni cielo ce n'è un altro: infinito, carico di possibilità e simbolo di speranza. Un concetto ispirato al proverbio inglese <em>the sky beyond</em> — il superamento dei limiti, la ricerca continua di qualcosa di più grande, di più profondo.</p>
+      <p class="fade-in">È un invito a guardare oltre, a riscoprire la meraviglia che si cela nei dettagli, a lasciarsi ispirare dall'idea che il viaggio verso nuovi orizzonti non ha mai fine.</p>
+      <div class="rule fade-in"></div>
+      <p class="fade-in">Il progetto ha tre anime: la creazione di gioielli con una forte componente concettuale e artistica, l'esposizione di pezzi unici come opere d'arte, e il jewellery coaching — un percorso che aiuta le persone a usare i gioielli per esprimere la propria personalità e creare impatto nel contesto sociale e professionale.</p>
+    </div>
+  </section>
+
+  <div class="full-rule"></div>
+
+  <!-- DESIGNER -->
+  <section id="designer">
+    <div class="designer-inner">
+      <div class="designer-body">
+        <div class="section-label">Chi sono</div>
+        <h2 class="fade-in">Alessia<br>Semeraro</h2>
+        <p class="fade-in">Contemporary jewellery designer-maker con vent'anni di esperienza nel design e nella realizzazione di gioielli contemporanei. Italiana, formatasi a Londra e Firenze, con una lunga storia nel mondo del gioiello di lusso internazionale.</p>
+        <p class="fade-in">Il mio approccio è caratterizzato dall'uso di materiali non convenzionali — ferro, ottone, legno bruciato — accanto a metalli preziosi come oro 24ct e argento riciclato. L'estetica è minimalista e astratta, centrata sul concetto di integrità e proporzione dei materiali.</p>
+        <p class="fade-in">Nel mio percorso artistico canalizzo emozioni profondamente personali, esplorando temi di resilienza, identità e il profondo viaggio della femminilità e della maternità. Ogni pezzo è un pensiero da indossare — non un ornamento, ma un segno che resta.</p>
+
+        <div class="designer-credentials fade-in">
+          <h3>Formazione</h3>
+          <div class="credential-item">
+            <strong>Central St. Martin's — Londra</strong>
+            Jewellery Design and Making
+          </div>
+          <div class="credential-item">
+            <strong>London Guildhall University — Londra</strong>
+            Jewellery Design and Making
+          </div>
+          <div class="credential-item">
+            <strong>Alchimia Contemporary Jewellery School — Firenze</strong>
+            Con Manfred Bischoff e Manuel Vilhena
+          </div>
+          <div class="credential-item">
+            <strong>Morley Institute — Londra</strong>
+            Diploma di Fashion Millinery, tecniche tradizionali britanniche
+          </div>
+        </div>
+      </div>
+
+      <div class="designer-aside fade-in">
+        <div class="stat-block">
+          <div class="stat-number">20</div>
+          <div class="stat-label">Anni di esperienza</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Città nel mondo</div>
+        </div>
+
+        <div style="margin-top: 48px;">
+          <h3 style="font-family:'Jost',sans-serif;font-weight:200;font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(212,180,124,0.7);margin-bottom:20px;">Luxury — Esperienza</h3>
+          <ul class="luxury-list">
+            <li>Bulgari</li>
+            <li>Georg Jensen</li>
+            <li>Browns Diamonds</li>
+            <li>Autore South Sea Pearls</li>
+          </ul>
+        </div>
+
+        <div style="margin-top:48px;border-top:1px solid rgba(247,244,239,0.08);padding-top:32px;">
+          <p style="font-size:0.82rem;color:rgba(247,244,239,0.4);font-family:'Cormorant Garamond',serif;font-style:italic;line-height:1.6;">Opere nelle collezioni del Museo dell'Argento di Palazzo Pitti, Firenze. Pubblicazioni internazionali, tra cui la serie Lark Books.</p>
+        </div>
+
+        <div style="margin-top:32px;border-top:1px solid rgba(247,244,239,0.08);padding-top:32px;">
+          <p style="font-size:0.78rem;color:rgba(247,244,239,0.35);font-family:'Jost',sans-serif;font-weight:200;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px;">Co-fondatrice</p>
+          <p style="font-size:0.9rem;color:rgba(247,244,239,0.55);font-family:'Cormorant Garamond',serif;font-style:italic;">AGC — Prima associazione italiana di gioiellieri contemporanei</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="full-rule"></div>
+
+  <!-- COLLEZIONI -->
+  <section id="collezioni">
+    <div class="section-header">
+      <div>
+        <div class="section-label fade-in">Le collezioni</div>
+        <h2 class="fade-in">Gioielli che<br><em>raccontano</em></h2>
+      </div>
+      <p class="section-intro fade-in">Ogni pezzo parla di connessioni tra passato e presente, tra progetto e concetto, tra bellezza e significato. Non si chiede scintillio — si cerca un segno che resta.</p>
+    </div>
+
+    <div class="collezioni-grid">
+
+      <!-- AYEN -->
+      <div class="collezione-card fade-in">
+        <div class="collezione-number">I</div>
+        <div class="collezione-tag">Ottone &amp; Argento</div>
+        <h3>Ayen Collection</h3>
+        <p>"Ayen" significa "occhio" in amarico, la lingua di mio figlio. Nasce dai suoi primissimi schizzi infantili — volti con grandi occhi, linee incerte e genuine, cariche di intensità. Una collezione che celebra la scoperta e la dolcezza dell'infanzia, trasformata in forma da indossare.</p>
+        <p>Filo di ottone e argento, saldato e martellato. Ogni colpo lascia un segno unico: nessun pezzo è uguale a un altro.</p>
+        <div class="collezione-price">
+          Fascia di prezzo <span>60 — 160 €</span>
+        </div>
+      </div>
+
+      <!-- LIB -->
+      <div class="collezione-card fade-in">
+        <div class="collezione-number">II</div>
+        <div class="collezione-tag">Argento 925</div>
+        <h3>Lib Collection</h3>
+        <p>"Lib" significa "cuore" in amarico — un luogo interiore dove tutto ha inizio. La collezione porta insieme forma e sentimento, trasformando i dettagli anatomici del cuore in linee essenziali e stilizzate.</p>
+        <p>Ispirata alla mostra "Where the Hearts are Born", riflette un approccio minimalista e scultoreo. Ogni pezzo è un atto di presenza silenziosa.</p>
+        <div class="collezione-price">
+          Fascia di prezzo <span>60 — 160 €</span>
+        </div>
+      </div>
+
+      <!-- JADE -->
+      <div class="collezione-card jade fade-in">
+        <div>
+          <div class="collezione-number">III</div>
+          <div class="collezione-tag">Giade orientali antiche e contemporanee</div>
+          <h3>Jade Collection</h3>
+          <p>Pezzi unici non più riproducibili. La Jade Collection celebra la bellezza e l'aura delle giade orientali — ispirata ai draghi stilizzati e all'iconografia storica cinese. Ogni giada è montata su collane in ottone e argento a tre cerchi: il cerchio simboleggia continuità e armonia, il numero tre richiama il ciclo Cielo-Uomo-Terra.</p>
+          <p>Un fascino misterioso. Una presenza che emana eleganza e potere discreto. Solo collane.</p>
+          <div class="collezione-price">
+            Fascia di prezzo <span>210 — 2000+ €</span>
+          </div>
+        </div>
+        <div class="jade-right">
+          <p class="jade-quote">"Indossare questo gioiello significa stare in equilibrio tra ciò che si è e ciò che si vive."</p>
+          <p style="font-size:0.82rem;color:rgba(247,244,239,0.45);">La giada non si sceglie — ti riconosce. Un gioiello da trasmettere un giorno alle mani di chi ami.</p>
+        </div>
+      </div>
+
+      <!-- HALO -->
+      <div class="collezione-card halo fade-in">
+        <div class="collezione-number">IV</div>
+        <div class="collezione-tag">Fashion Millinery — British Tradition</div>
+        <h3>Halo Fascinators</h3>
+        <p>Fascinators-gioiello cuciti a mano secondo le tecniche tradizionali britanniche apprese al Morley Institute di Londra. Tessuti vintage inglesi selezionati, gioielli incastonati uno a uno nel corso degli anni. Ogni Halo è un oggetto irripetibile.</p>
+        <p>Per chi vuole essere Queen — come e quando lo desidera.</p>
+      </div>
+
+      <!-- SALE -->
+      <div class="collezione-card sale fade-in">
+        <div class="collezione-number">V</div>
+        <div class="collezione-tag">Opera unica — Ferro &amp; Garza</div>
+        <h3>Collana di Sale</h3>
+        <p>Sale marino, filo di ferro, garza di cotone. Il sale a contatto con il ferro, la garza che si tinge di ruggine, il filo che si spezza. La materia muta forma.</p>
+        <p>Un'opera viva che evolve nel tempo, simbolo della capacità di trasformare la sofferenza in memoria, in speranza. Non un gioiello da conservare — un gioiello da abitare.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="full-rule"></div>
+
+  <!-- AEMOTIONS -->
+  <section id="aemotions">
+    <div class="aemotions-inner">
+      <div class="aemotions-left fade-in">
+        <div class="section-label">Progetto artistico</div>
+        <h2>AEmotions &amp;<br><em>Where Hearts<br>Are Born</em></h2>
+        <p>A marzo 2025, nell'ambito della Gorizia Design Week e del programma di Gorizia Capitale Europea della Cultura 2025, ho presentato AEmotions — un progetto che intreccia gioielli d'autore contemporanei e fotografia emotiva.</p>
+        <p>"Where the Hearts are Born" è il capitolo espositivo di AEmotions: i miei gioielli in dialogo con la fotografia di Eleonora Oleotto. Forme e materiali si intrecciano creando un ponte tra esperienza e percezione, tra ciò che nasce e ciò che si trasforma.</p>
+        <p>Un racconto di vent'anni di vita e ricerca — non solo una mostra, ma un ponte tra cuore e arte.</p>
+        <p style="margin-top:32px;font-size:0.88rem;color:var(--brass);font-family:'Cormorant Garamond',serif;font-style:italic;">Le opere sono disponibili per l'acquisto.</p>
+      </div>
+      <div class="aemotions-right fade-in">
+        <div class="aemotions-box">
+          <h3>Where Hearts Are Born</h3>
+          <p>I lavori di Alessia Semeraro e della fotografa Eleonora Oleotto si incontrano in un dialogo sospeso. Le artiste condividono un percorso creativo che parte dalle loro vite personali e si evolve in opere capaci di toccare corde profonde.</p>
+          <p>AEmotions non è solo una mostra, ma un invito a riflettere sulla complessità e sul potere delle emozioni.</p>
+          <span class="aemotions-tag">Gorizia Design Week 2025 — Capitale Europea della Cultura</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="full-rule"></div>
+
+  <!-- COACHING -->
+  <section id="coaching">
+    <div class="coaching-header fade-in">
+      <div class="section-label">Jewellery Coaching</div>
+      <h2>Il gioiello<br>che <em>racconta</em><br>chi sei</h2>
+    </div>
+
+    <div class="coaching-intro">
+      <div class="coaching-manifesto fade-in">
+        <p>Non ti dico cosa va di moda.</p>
+        <p>Non ti dico cosa devi comprare.</p>
+        <p class="no-italic">I gioielli possiedono una dimensione emotiva profonda. Ti aiuto a svelarla e a utilizzarla per esprimere a pieno la tua personalità.</p>
+      </div>
+      <div class="coaching-right fade-in">
+        <p>Imparerai a usare i gioielli per raccontarti, influenzare la tua immagine e creare un impatto significativo nel tuo ambiente sociale e professionale.</p>
+        <p>Scegliere un gioiello per sé è un atto di indipendenza emotiva. I gioielli non sono semplici decorazioni: portano messaggi, raccontano di noi agli altri e al mondo.</p>
+        <p>Lavoro come un editor di gioielli — creo narrazioni che ti somigliano, dialoghi tra contemporaneo e vintage. I pilastri: indossabilità, storia, cultura, estetica.</p>
+      </div>
+    </div>
+
+    <div class="coaching-formats">
+      <div class="format-card fade-in">
+        <div class="format-icon">I</div>
+        <h4>Consulenza in atelier</h4>
+        <p>Un incontro personalizzato per scoprire il gioiello giusto per te — il tuo stile, la tua personalità, la donna che sei adesso. Anche combinando contemporaneo e vintage.</p>
+      </div>
+      <div class="format-card fade-in">
+        <div class="format-icon">II</div>
+        <h4>Incontri di gruppo</h4>
+        <p>Momenti liberi tra donne per parlare di gioielli in modo autentico, senza regole e senza giudizio. Storie, significati, come indossarli e quali lasciar andare. Aprire il cassetto dei gioielli con occhi nuovi.</p>
+      </div>
+      <div class="format-card fade-in">
+        <div class="format-icon">III</div>
+        <h4>Workshop</h4>
+        <p>"Da zero a gioiello" — trasforma un oggetto già esistente in un gioiello contemporaneo unico e personale. Un processo alchemico per scoprire la propria creatività.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="full-rule"></div>
+
+  <!-- DUETTI -->
+  <section id="duetti">
+    <div class="duetti-inner">
+      <div class="duetti-left fade-in">
+        <div class="duetti-visual">
+          <div class="duetti-visual-text">
+            <span>D</span>
+          </div>
+        </div>
+      </div>
+      <div class="duetti-right">
+        <div class="section-label fade-in">Un format esclusivo</div>
+        <h2 class="fade-in">I <em>Duetti</em></h2>
+        <p class="fade-in">Il gioiello contemporaneo racconta chi sei oggi. Il vintage rappresenta la tua storia, la tua memoria. Insieme, raccontano unendo presente e passato.</p>
+        <p class="fade-in">I Duetti sono combinazioni di gioielli Ayen con pezzi vintage selezionati negli anni durante i miei viaggi nel mondo. Ogni abbinamento è pensato per la persona, non per l'occasione.</p>
+        <div class="duetti-rule fade-in"></div>
+        <p class="duetti-quote fade-in">"Quando combini il vintage al contemporaneo, comunichi al mondo un'immagine completa di te stessa."</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="full-rule"></div>
+
+  <!-- CONTATTI -->
+  <section id="contatti">
+    <div class="contact-left fade-in">
+      <h2>Incontra<br>il <em>progetto</em></h2>
+      <p>Per commissioni, consulenze di coaching, acquisto delle opere di "Where the Hearts are Born" o semplicemente per entrare nel mondo de Il Cielo Sopra.</p>
+      <p>Lo studio è attualmente su appuntamento.</p>
+      <div class="contact-links">
+        <a href="https://instagram.com/alessiasemerarojewellery" class="contact-link" target="_blank">
+          <span class="contact-link-label">Instagram</span>
+          <span class="contact-link-value">@alessiasemerarojewellery</span>
+        </a>
+        <a href="https://wa.me/393513023448" class="contact-link" target="_blank">
+          <span class="contact-link-label">WhatsApp</span>
+          <span class="contact-link-value">+39 351 302 3448</span>
+        </a>
+        <a href="mailto:info@ilcielosopra.com" class="contact-link">
+          <span class="contact-link-label">Email</span>
+          <span class="contact-link-value">info@ilcielosopra.com</span>
+        </a>
+      </div>
+    </div>
+    <div class="contact-right fade-in">
+      <div class="skyline-text">
+        Il<br>Cielo<br>Sopra
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-copy">&copy; 2025 Alessia Semeraro — Il Cielo Sopra. Contemporary Jewellery &amp; Coaching.</span>
+    <span class="footer-tagline">the sky beyond</span>
+  </footer>
+
+  <script>
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Nav transparency on scroll
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        nav.style.background = 'rgba(247,244,239,0.92)';
+        nav.style.backdropFilter = 'blur(12px)';
+        nav.style.boxShadow = '0 1px 0 rgba(0,0,0,0.06)';
+        nav.style.mixBlendMode = 'normal';
+      } else {
+        nav.style.background = 'transparent';
+        nav.style.backdropFilter = 'none';
+        nav.style.boxShadow = 'none';
+        nav.style.mixBlendMode = 'multiply';
+      }
+    });
+  </script>
+
+</body>
+</html>
