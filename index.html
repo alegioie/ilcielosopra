@@ -368,7 +368,8 @@
     .collezione-card.jade {
       grid-column: 1 / -1;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+      column-gap: 2px;
       background: var(--ink);
     }
     .jade-img { overflow: hidden; min-height: 0; }
@@ -396,7 +397,6 @@
     }
 
     .jade-testimonial { text-align: center; margin-top: 10px; font-size: 1.05rem; font-style: italic; color: var(--brass-light) !important; }
-    @media (min-width: 1100px) { .jade-testimonial { white-space: nowrap; } }
     .jade-testimonial span { display: block; margin-top: 0; font-style: italic; font-size: 0.88rem; line-height: 1.3; color: var(--cream); }
     .collezione-card.limited { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 2fr; }
     .limited-img { overflow: hidden; min-height: 0; height: 100%; }
@@ -696,8 +696,11 @@
     .jade-img img, .sale-img img, .limited-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     @media (max-width: 900px) { .mostre-opera .collezione-card.sale { grid-template-columns: 1fr; } .jade-img, .sale-img, .limited-img { height: 300px; } }
     .jade .jade-quote { font-size: 1.3rem; line-height: 1.45; margin: 2px 0 0; color: var(--brass-light); }
-    .jade .jade-testimonial { font-size: 1.05rem; margin: 12px 0 0; color: var(--cream) !important; }
+    .jade .jade-testimonial { font-size: 0.92rem; margin: 12px 0 0; color: var(--cream) !important; }
     @media (max-width: 600px) { .contact-left { min-width: 0; } .contact-link { flex-direction: column; align-items: flex-start; gap: 2px; } .contact-link-label { width: auto; } .contact-link-value { overflow-wrap: anywhere; } .contact-right { display: none; } }
+    .sale-more { margin: 4px 0 14px; font-style: italic; }
+    #collezioni-gioielli .section-header { align-items: end; }
+    #collezioni-gioielli .section-intro { align-self: end; padding-top: 0; padding-bottom: 6px; }
   </style>
 </head>
 <body>
@@ -740,7 +743,7 @@
       <p class="fade-in">Il nome nasce dal proverbio inglese <em>the sky beyond</em>, cioè "sopra ogni cielo c'è un altro cielo". È una filosofia di vita: oltre ciò che riusciamo a vedere esiste sempre un nuovo orizzonte e la bellezza non è una meta, ma una scoperta continua.</p>
       <p class="fade-in">Ogni gioiello porta con sé questa filosofia: è un pensiero reso indossabile, che racconta chi sei e chi stai diventando.</p>
       <div class="rule fade-in"></div>
-      <p class="fade-in">Il Cielo Sopra è lo studio e il progetto creativo di Alessia Semeraro, designer del gioiello contemporaneo. Riunisce tre anime attorno a un unico centro, il gioiello:</p>
+      <p class="fade-in">Il Cielo Sopra è lo studio e il progetto creativo di <a href="https://www.alessiasemeraro.com/profile.html" target="_blank" rel="noopener" class="inline-link">Alessia Semeraro</a>, designer del gioiello contemporaneo. Riunisce tre anime attorno a un unico centro, il gioiello:</p>
       <ul class="anime-list fade-in">
         <li>la progettazione e la realizzazione di gioielli contemporanei</li>
         <li>i progetti espositivi di pezzi unici come opere d'arte</li>
@@ -760,7 +763,7 @@
         <p class="fade-in">Da oltre vent'anni Alessia Semeraro crea gioielli contemporanei, tra ricerca artistica e collezioni indossabili.</p>
         <p class="fade-in">Al centro della sua ricerca c'è la materia: ottone, argento, oro, ferro e legno bruciato, spesso recuperati e trasformati. Ogni materiale porta con sé una storia, che la trasformazione custodisce e fa continuare in una forma nuova. L'estetica è essenziale, attenta alla proporzione e all'equilibrio. La ricerca di significato nasce dalla sua storia personale: gioielli profondi e semplici allo stesso tempo.</p>
         <p class="fade-in">Alessia studia design del gioiello prima a Londra, alla <a href="https://www.arts.ac.uk/colleges/central-saint-martins" target="_blank" rel="noopener" class="inline-link">Central St. Martin's</a> e alla <a href="https://www.londonmet.ac.uk/schools/art-architecture-and-design/" target="_blank" rel="noopener" class="inline-link">London Guildhall University</a>, poi a Firenze, ad <a href="https://alchimia.it/" target="_blank" rel="noopener" class="inline-link">Alchimia Contemporary Jewellery School</a>. Al <a href="https://www.morleycollege.ac.uk/" target="_blank" rel="noopener" class="inline-link">Morley College</a> di Londra si diploma in Fashion Millinery, il design del cappello.</p>
-        <p class="fade-in">È ideatrice e cofondatrice di <a href="https://www.agc-it.org/" target="_blank" rel="noopener" class="inline-link">AGC</a>, la prima associazione italiana di gioiello contemporaneo nata a Trieste nel 2004. Ha esposto in musei e gallerie internazionali. I suoi lavori compaiono in pubblicazioni dedicate al gioiello contemporaneo e fanno parte di <a href="https://www.museodegliargenti.it/" target="_blank" rel="noopener" class="inline-link">collezioni pubbliche</a> e private. Per <a href="https://www.go2025.eu/" target="_blank" rel="noopener" class="inline-link">Gorizia Capitale Europea della Cultura 2025</a> ha presentato una mostra personale che racconta tutto il suo percorso artistico.</p>
+        <p class="fade-in">È ideatrice e cofondatrice di <a href="https://www.agc-it.org/" target="_blank" rel="noopener" class="inline-link">AGC</a>, la prima associazione italiana di gioiello contemporaneo nata a Trieste nel 2004. Ha esposto in musei e gallerie internazionali. I suoi lavori compaiono in <a href="https://www.alessiasemeraro.com/publications.html" target="_blank" rel="noopener" class="inline-link">pubblicazioni del gioiello contemporaneo</a> e fanno parte di <a href="https://www.museodegliargenti.it/" target="_blank" rel="noopener" class="inline-link">collezioni pubbliche</a> e private. Per <a href="https://www.go2025.eu/" target="_blank" rel="noopener" class="inline-link">Gorizia Capitale Europea della Cultura 2025</a> ha presentato una mostra personale che racconta tutto il suo percorso artistico.</p>
         <p class="fade-in">A questo percorso affianca gli anni trascorsi nelle grandi maison del gioiello di lusso tra Londra e Barcellona, a contatto ogni giorno con chi sceglie un gioiello. Da questa duplice esperienza nasce il Jewellery Reading™, un metodo per scegliere il gioiello giusto per sé.</p>
       </div>
       <div class="designer-photo fade-in">
@@ -861,6 +864,8 @@
             <div class="collezione-tag">Ferro &amp; Sale · Opera unica</div>
             <h3>Collana di Sale · Io Vivo</h3>
             <p>Sale marino, filo di ferro, garza di cotone. Il sale a contatto con il ferro, la garza che si tinge di ruggine, il filo che si spezza. La materia muta forma ed è il simbolo della capacità di trasformare la sofferenza in memoria e in speranza. Un'opera viva che evolve nel tempo: un gioiello da abitare, più che da conservare.</p>
+            <p class="sale-more">Altre opere uniche nascono dalla stessa ricerca.</p>
+            <a href="https://www.alessiasemeraro.com/" target="_blank" rel="noopener" class="hero-cta">Scopri il sito d'artista</a>
           </div>
         </div>
     </div>
@@ -904,7 +909,7 @@
     </div>
     <div class="workshop-creativi fade-in">
       <div class="section-label">Per chi crea gioielli</div>
-      <h3>Workshop per designer: costruisci la tua collezione di gioielli</h3>
+      <h3>Workshop per designer: "Costruisci la tua collezione di gioielli"</h3>
       <p>Un workshop individuale per designer e creativi che vogliono dare forma a una collezione coerente, dall'idea alla proposta finale.</p>
       <a href="mailto:info@alessiasemeraro.com?subject=Workshop%20Costruisci%20la%20tua%20collezione%20di%20gioielli" class="hero-cta workshop-cta">Ti interessa il workshop?</a>
     </div>
