@@ -322,7 +322,7 @@
       grid-template-columns: 1fr 2fr;
       gap: 80px;
       margin-bottom: 36px;
-      align-items: end;
+      align-items: start;
     }
     .section-header .section-label { margin-bottom: 20px; }
     .section-header h2 {
@@ -333,7 +333,7 @@
       color: var(--ink);
     }
     .section-header h2 em { font-style: italic; color: var(--brass); }
-    .section-intro { font-size: 1.0rem; color: var(--ink-mid); max-width: 520px; align-self: end; }
+    .section-intro { font-size: 1.0rem; color: var(--ink-mid); max-width: 520px; align-self: start; padding-top: 4px; }
     .collezioni-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; align-items: start; }
     .collezione-card { background: var(--white); position: relative; transition: background 0.4s; overflow: hidden; }
     .card-img-wrap { overflow: hidden; height: 260px; }
@@ -397,7 +397,7 @@
 
     .jade-testimonial { text-align: center; margin-top: 10px; font-size: 1.05rem; font-style: italic; color: var(--brass-light) !important; }
     @media (min-width: 1100px) { .jade-testimonial { white-space: nowrap; } }
-    .jade-testimonial span { display: block; margin-top: 0; font-style: italic; font-size: 0.88rem; line-height: 1.3; color: #F5C518; }
+    .jade-testimonial span { display: block; margin-top: 0; font-style: italic; font-size: 0.88rem; line-height: 1.3; color: var(--cream); }
     .collezione-card.limited { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 2fr; }
     .limited-img { overflow: hidden; min-height: 0; height: 100%; }
     .limited-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform 0.6s ease; }
@@ -572,9 +572,9 @@
     .magazine-card p { font-size: 1.0rem; color: var(--ink-mid); line-height: 1.45; margin-bottom: 14px; flex-grow: 1; }
     .magazine-link { font-family: 'Jost', sans-serif; font-weight: 500; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass); }
     .magazine-cta { margin-top: 20px; }
-    .inline-link { color: var(--ink); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--brass); }
+    .inline-link, .designer-body .inline-link { color: inherit; font-weight: inherit; text-decoration: none; border-bottom: none; }
     .inline-link:hover { color: var(--brass); }
-    .designer-body .inline-link { color: var(--cream); border-bottom-color: var(--brass-light); }
+    .designer-body .inline-link:hover { color: var(--brass-light); }
     #faq { padding: 0 0 32px; max-width: 820px; }
     #faq h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 1.8rem; line-height: 1.2; color: var(--ink); margin: 12px 0 16px; }
     #faq h2 em { font-style: italic; color: var(--brass); }
@@ -695,8 +695,8 @@
     .jade-img, .sale-img, .limited-img { position: relative; min-height: 260px; }
     .jade-img img, .sale-img img, .limited-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     @media (max-width: 900px) { .mostre-opera .collezione-card.sale { grid-template-columns: 1fr; } .jade-img, .sale-img, .limited-img { height: 300px; } }
-    .jade .jade-quote { font-size: 1.3rem; line-height: 1.45; margin: 2px 0 0; }
-    .jade .jade-testimonial { font-size: 1.05rem; margin: 12px 0 0; }
+    .jade .jade-quote { font-size: 1.3rem; line-height: 1.45; margin: 2px 0 0; color: var(--brass-light); }
+    .jade .jade-testimonial { font-size: 1.05rem; margin: 12px 0 0; color: var(--cream) !important; }
     @media (max-width: 600px) { .contact-left { min-width: 0; } .contact-link { flex-direction: column; align-items: flex-start; gap: 2px; } .contact-link-label { width: auto; } .contact-link-value { overflow-wrap: anywhere; } .contact-right { display: none; } }
   </style>
 </head>
@@ -824,10 +824,10 @@
           <img src="images/fiha-gioiello-contemporaneo-amuleto-portafortuna-alessia-semeraro.jpg" alt="Fiha, amuleto portafortuna a mano fico in madreperla in un ovale di ottone martellato, Alessia Semeraro" />
         </div>
         <div class="card-body">
-          <div class="collezione-tag">Pochi esemplari</div>
+          <div class="collezione-tag">Piccole serie</div>
           <h3>Limited Edition</h3>
-          <p>Piccole serie in pochi esemplari, nate da un simbolo o da un gesto quotidiano e ripensate in chiave contemporanea: oggetti da collezione da indossare e custodire, presentati una volta l'anno.</p>
-          <h4>Fiha, la mano fico portafortuna</h4>
+          <p>Gioielli in pochi esemplari, nati da un simbolo o da un gesto quotidiano e ripensati in chiave contemporanea: oggetti da collezione da indossare e custodire, presentati una volta l'anno.</p>
+          <h4>Fiha, il gioiello portafortuna</h4>
           <p>Fiha è la prima Limited Edition: una collezione di amuleti portafortuna ispirati alla mano fico, antico gesto di protezione. Piccole mani in madreperla intagliata, sospese in un ovale di filo d'ottone come un antico cammeo.</p>
         </div>
       </div>
@@ -847,7 +847,6 @@
         <p>AEmotions è un progetto artistico che intreccia il gioiello contemporaneo di Alessia Semeraro e la fotografia emozionale di <a href="https://exploringemotions.net/" target="_blank" rel="noopener" class="inline-link">Eleonora Oleotto</a>, presentato a <a href="https://www.go2025.eu/" target="_blank" rel="noopener" class="inline-link">Gorizia Capitale Europea della Cultura 2025</a>. Attraverso il proprio percorso artistico, le due artiste raccontano come le esperienze di vita entrano nel loro lavoro, tra ciò che nasce e ciò che si trasforma.</p>
         <p>"Dove nascono i cuori" è il capitolo finale dell'esposizione e rappresenta il cuore come luogo interiore da cui tutto ha inizio: le emozioni, i legami, la forma stessa dei gioielli.</p>
         <p>Un racconto di vent'anni di vita e di ricerca, un ponte tra cuore e arte.</p>
-        <span class="aemotions-tag">Gorizia Capitale Europea della Cultura 2025</span>
       </div>
       <div class="aemotions-img fade-in">
         <img src="images/aemotions%20cuore.jpg" alt="AEmotions, gioiello design Alessia Semeraro e fotografia di Eleonora Oleotto" />
@@ -921,7 +920,7 @@
         <div class="section-label fade-in">Magazine</div>
         <h2 class="fade-in">Jewellery Reading, <br>il magazine sul <em>gioiello</em></h2>
       </div>
-      <p class="section-intro fade-in">Jewellery Reading è il progetto editoriale di Alessia Semeraro, pubblicato ogni settimana su Substack. Le riflessioni nascono dalla sua duplice esperienza, di designer di gioielli contemporanei e di consulente nelle grandi maison del gioiello di lusso: ogni articolo parte da una storia vera e si chiede che cosa racconta un gioiello di chi lo indossa.<br><br>Qui sotto trovi una selezione degli articoli. Per riceverli tutti, iscriviti a <a href="https://jewelleryreading.substack.com/subscribe" target="_blank" rel="noopener" class="inline-link">Jewellery Reading su Substack</a>: è gratuito.</p>
+      <p class="section-intro fade-in">Jewellery Reading è il progetto editoriale di Alessia Semeraro, pubblicato ogni settimana su Substack. Le riflessioni nascono dalla sua duplice esperienza, di designer di gioielli contemporanei e di consulente nelle grandi maison del gioiello di lusso: ogni articolo parte da una storia vera e si chiede che cosa racconta un gioiello di chi lo indossa.<br><br>Qui sotto trovi una selezione degli articoli. Per riceverli tutti, iscriviti gratuitamente a <a href="https://jewelleryreading.substack.com/subscribe" target="_blank" rel="noopener" class="inline-link">Jewellery Reading su Substack</a>.</p>
     </div>
     <div class="magazine-grid">
       <a class="magazine-card fade-in" href="https://jewelleryreading.substack.com/p/il-linguaggio-nascosto-delle-giade" target="_blank" rel="noopener">
