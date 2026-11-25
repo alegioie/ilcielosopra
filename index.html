@@ -51,22 +51,24 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 40px;
       transition: background 0.4s, box-shadow 0.4s;
     }
     .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-weight: 400;
-      letter-spacing: 0.12em;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.95rem;
+      white-space: nowrap;
+      font-weight: 500;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--ink);
+      color: var(--brass);
       text-decoration: none;
     }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links { display: flex; gap: 28px; list-style: none; white-space: nowrap; }
     .nav-links a {
       font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.75rem;
+      font-weight: 500;
+      font-size: 0.8rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--ink-mid);
@@ -122,8 +124,8 @@
       display: inline-block;
       align-self: flex-start;
       font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.72rem;
+      font-weight: 500;
+      font-size: 0.8rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--ink);
@@ -322,6 +324,7 @@
       margin-bottom: 60px;
       align-items: end;
     }
+    .section-header .section-label { margin-bottom: 20px; }
     .section-header h2 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
@@ -385,15 +388,13 @@
     .jade-quote {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 1.15rem;
+      font-size: 1.4rem;
       color: var(--brass-light);
       line-height: 1.6;
       margin-top: 32px;
-      border-left: 1px solid var(--brass);
-      padding-left: 20px;
     }
 
-    .jade-testimonial { margin-top: 28px; font-size: 0.95rem; font-style: italic; color: rgba(247,244,239,0.8) !important; }
+    .jade-testimonial { text-align: center; margin-top: 28px; font-size: 0.95rem; font-style: italic; color: rgba(247,244,239,0.8) !important; }
     .jade-testimonial span { display: block; margin-top: 6px; font-style: normal; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass-light); }
     .collezione-card.limited { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; }
     .limited-img { overflow: hidden; min-height: 460px; }
@@ -518,6 +519,7 @@
     }
     .workshop-creativi { margin-top: 56px; padding-top: 36px; border-top: 1px solid var(--brass); max-width: 700px; }
     .workshop-creativi h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: 1.6rem; color: var(--ink); margin: 16px 0; }
+    .workshop-cta { margin-top: 24px; }
     .workshop-creativi p { font-size: 1.0rem; color: var(--ink-mid); }
     .format-card p { font-size: 1.0rem; color: var(--ink-mid); line-height: 1.75; }
 
@@ -570,9 +572,14 @@
     #faq h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3.2rem); line-height: 1.15; color: var(--ink); margin: 20px 0 40px; }
     #faq h2 em { font-style: italic; color: var(--brass); }
     .faq-list { max-width: 820px; }
-    .faq-item { border-top: 1px solid var(--cream-dark); padding: 24px 0; }
-    .faq-item h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: 1.45rem; color: var(--ink); margin-bottom: 10px; }
-    .faq-item p { font-size: 1.0rem; color: var(--ink-mid); }
+    .faq-item { border-top: 1px solid var(--cream-dark); }
+    .faq-item:last-child { border-bottom: 1px solid var(--cream-dark); }
+    .faq-item summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 18px 0; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1.6rem; color: var(--brass); line-height: 1; transition: transform 0.3s; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: 1.4rem; color: var(--ink); margin: 0; }
+    .faq-item p { font-size: 1.0rem; color: var(--ink-mid); padding: 0 0 22px; max-width: 760px; }
     #contatti {
       padding: 64px 60px 48px;
       max-width: 1200px;
@@ -617,19 +624,19 @@
 
     footer { border-top: 1px solid var(--cream-dark); padding: 60px 60px 32px; max-width: 1200px; margin: 0 auto; }
     .footer-main { display: grid; grid-template-columns: 2fr 1fr; gap: 80px; }
-    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
+    .footer-logo { display: block; font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; color: var(--ink); text-decoration: none; margin-bottom: 20px; }
     .footer-by { display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; color: var(--brass); margin: 4px 0 20px; }
     .footer-value { font-size: 0.95rem; color: var(--ink-mid); max-width: 460px; margin-bottom: 12px; }
-    .footer-place { font-size: 0.85rem; color: var(--ink-light); margin-bottom: 24px; }
+    .footer-place { font-size: 1.0rem; font-weight: 500; color: var(--ink); margin-bottom: 24px; }
     .footer-social { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; }
     .footer-social a { display: inline-flex; opacity: 0.85; transition: opacity 0.3s; }
     .footer-social a:hover { opacity: 1; }
     .footer-social img, .footer-social svg { width: 20px; height: 20px; display: block; }
     .footer-social img { opacity: 0.75; }
-    .footer-social a, .footer-right a { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-mid); text-decoration: none; transition: color 0.3s; }
+    .footer-social a, .footer-right a { font-family: 'Jost', sans-serif; font-weight: 500; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-mid); text-decoration: none; transition: color 0.3s; }
     .footer-social a:hover, .footer-right a:hover { color: var(--brass); }
     .footer-right { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; text-align: right; }
-    .footer-shortcut { margin: 48px 0 32px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; }
+    .footer-shortcut { margin: 48px 0 32px; font-family: 'Cormorant Garamond', serif; font-style: normal; font-size: 1.3rem; }
     .footer-shortcut a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--brass); padding-bottom: 2px; }
     .footer-shortcut a:hover { color: var(--brass); }
     .footer-socket { border-top: 1px solid var(--cream-dark); padding-top: 20px; font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.7rem; letter-spacing: 0.12em; color: var(--ink-light); }
@@ -659,7 +666,7 @@
       .footer-main { grid-template-columns: 1fr; gap: 40px; }
       .footer-right { align-items: flex-start; text-align: left; }
     }
-    @media (max-width: 1100px) { .nav-links { display: none; } }
+    @media (max-width: 1279px) { .nav-links { display: none; } }
   </style>
 </head>
 <body>
@@ -775,7 +782,7 @@
           <h3>Jade Collection</h3>
           <p>Jade celebra la bellezza e l'aura delle giade orientali. Ogni pendente è una giada unica ispirata agli antichi disegni di draghi e all'iconografia storica cinese e valorizzata da una collana contemporanea in ottone e argento. Tre cerchi intrecciati: continuità, armonia, il ciclo Cielo-Uomo-Terra.</p>
           <p>Il design che incornicia ogni giada è volutamente minimale e sobrio: una struttura silenziosa che si fa da parte per lasciar parlare la pietra. Ogni scelta nella lavorazione del metallo esiste per esaltare la gemma, non per competere con essa. Ogni collana è un pezzo unico perché ogni giada esiste una sola volta e non si può riprodurre.</p>
-          <p class="jade-quote">"Le giade sono talismani di protezione, di buona fortuna e di armonia, quell'equilibrio tra ciò che si è e ciò che si vive."</p>
+          <p class="jade-quote">Le giade sono talismani di protezione, di buona fortuna e di armonia, quell'equilibrio tra ciò che si è e ciò che si vive.</p>
           <p class="jade-testimonial">"Trovo sempre l'occasione per indossare la mia collana con giada."<span>Tiziana, Trieste</span></p>
         </div>
       </div>
@@ -868,6 +875,7 @@
       <div class="section-label">Per chi crea gioielli</div>
       <h3>Workshop per designer: costruisci la tua collezione di gioielli</h3>
       <p>Un workshop individuale per designer e creativi che vogliono dare forma a una collezione coerente, dall'idea alla proposta finale.</p>
+      <a href="mailto:info@alessiasemeraro.com?subject=Workshop%20Costruisci%20la%20tua%20collezione%20di%20gioielli" class="hero-cta workshop-cta">Ti interessa il workshop? Scrivi ad Alessia</a>
     </div>
   </section>
 
@@ -884,25 +892,11 @@
       <p class="section-intro fade-in">Jewellery Reading è il progetto editoriale di Alessia Semeraro, pubblicato ogni settimana su Substack. Le riflessioni nascono dalla sua duplice esperienza, di designer di gioielli contemporanei e di consulente nelle grandi maison del gioiello di lusso: ogni articolo parte da una storia vera e si chiede che cosa racconta un gioiello di chi lo indossa.</p>
     </div>
     <div class="magazine-grid">
-      <a class="magazine-card fade-in" href="https://jewelleryreading.substack.com/p/tre-motivi-per-cui-dovresti-indossare" target="_blank" rel="noopener">
-        <div class="magazine-img"><img src="images/Substack-articolo-tre-motivi-indossare-gioielli.jpg" alt="Tre motivi per indossare i tuoi gioielli, articolo di Alessia Semeraro" loading="lazy" /></div>
-        <h3>Tre motivi per cui dovresti indossare i tuoi gioielli (non lasciarli nel cassetto!)</h3>
+      <a class="magazine-card fade-in" href="https://jewelleryreading.substack.com/p/il-linguaggio-nascosto-delle-giade" target="_blank" rel="noopener">
+        <div class="magazine-img"><img src="images/Substack-articolo-linguaggio-nascosto-delle-giade.jpg" alt="Il linguaggio nascosto delle giade, articolo di Alessia Semeraro" loading="lazy" /></div>
+        <h3>Il linguaggio nascosto delle giade</h3>
         <span class="magazine-author">by Alessia Semeraro</span>
-        <p>La memoria, la presenza e Theresa May</p>
-        <span class="magazine-link">Leggi l'articolo</span>
-      </a>
-      <a class="magazine-card fade-in" href="https://jewelleryreading.substack.com/p/jewellery-reading-cosa-significa" target="_blank" rel="noopener">
-        <div class="magazine-img"><img src="images/substack-articolo-jewellery-reading-cosa-significa-leggere-un-gioiello.jpg" alt="Jewellery Reading, cosa significa leggere un gioiello, articolo di Alessia Semeraro" loading="lazy" /></div>
-        <h3>Jewellery Reading. Cosa significa leggere un gioiello.</h3>
-        <span class="magazine-author">by Alessia Semeraro</span>
-        <p>Vent'anni di designer, una maison di gioielleria a Londra, e il momento in cui ho capito cosa stavo davvero costruendo</p>
-        <span class="magazine-link">Leggi l'articolo</span>
-      </a>
-      <a class="magazine-card fade-in" href="https://jewelleryreading.substack.com/p/ma-lo-sai-come-nata-lagc" target="_blank" rel="noopener">
-        <div class="magazine-img"><img src="images/substack%20-articolo-come-e-nata-agc-gioiello-contemporaneo.jpg" alt="Com'è nata AGC, associazione italiana del gioiello contemporaneo, articolo di Alessia Semeraro" loading="lazy" /></div>
-        <h3>Ma lo sai com'è nata l'AGC?</h3>
-        <span class="magazine-author">by Alessia Semeraro</span>
-        <p>Quando sei orafi italiani diedero vita all'Associazione Italiana del Gioiello Contemporaneo</p>
+        <p>Chi sceglie la giada non sceglie mai per caso</p>
         <span class="magazine-link">Leggi l'articolo</span>
       </a>
       <a class="magazine-card fade-in" href="https://jewelleryreading.substack.com/p/il-vestito-lo-scegli-per-gli-altri" target="_blank" rel="noopener">
@@ -912,11 +906,25 @@
         <p>Perché dedichiamo ore a un abito e pochi minuti a ciò che ci accompagna per anni</p>
         <span class="magazine-link">Leggi l'articolo</span>
       </a>
-      <a class="magazine-card fade-in" href="https://jewelleryreading.substack.com/p/il-linguaggio-nascosto-delle-giade" target="_blank" rel="noopener">
-        <div class="magazine-img"><img src="images/Substack-articolo-linguaggio-nascosto-delle-giade.jpg" alt="Il linguaggio nascosto delle giade, articolo di Alessia Semeraro" loading="lazy" /></div>
-        <h3>Il linguaggio nascosto delle giade</h3>
+      <a class="magazine-card fade-in" href="https://jewelleryreading.substack.com/p/ma-lo-sai-come-nata-lagc" target="_blank" rel="noopener">
+        <div class="magazine-img"><img src="images/substack%20-articolo-come-e-nata-agc-gioiello-contemporaneo.jpg" alt="Com'è nata AGC, associazione italiana del gioiello contemporaneo, articolo di Alessia Semeraro" loading="lazy" /></div>
+        <h3>Ma lo sai com'è nata l'AGC?</h3>
         <span class="magazine-author">by Alessia Semeraro</span>
-        <p>Chi sceglie la giada non sceglie mai per caso</p>
+        <p>Quando sei orafi italiani diedero vita all'Associazione Italiana del Gioiello Contemporaneo</p>
+        <span class="magazine-link">Leggi l'articolo</span>
+      </a>
+      <a class="magazine-card fade-in" href="https://jewelleryreading.substack.com/p/jewellery-reading-cosa-significa" target="_blank" rel="noopener">
+        <div class="magazine-img"><img src="images/substack-articolo-jewellery-reading-cosa-significa-leggere-un-gioiello.jpg" alt="Jewellery Reading, cosa significa leggere un gioiello, articolo di Alessia Semeraro" loading="lazy" /></div>
+        <h3>Jewellery Reading. Cosa significa leggere un gioiello.</h3>
+        <span class="magazine-author">by Alessia Semeraro</span>
+        <p>Vent'anni di designer, una maison di gioielleria a Londra, e il momento in cui ho capito cosa stavo davvero costruendo</p>
+        <span class="magazine-link">Leggi l'articolo</span>
+      </a>
+      <a class="magazine-card fade-in" href="https://jewelleryreading.substack.com/p/tre-motivi-per-cui-dovresti-indossare" target="_blank" rel="noopener">
+        <div class="magazine-img"><img src="images/Substack-articolo-tre-motivi-indossare-gioielli.jpg" alt="Tre motivi per indossare i tuoi gioielli, articolo di Alessia Semeraro" loading="lazy" /></div>
+        <h3>Tre motivi per cui dovresti indossare i tuoi gioielli (non lasciarli nel cassetto!)</h3>
+        <span class="magazine-author">by Alessia Semeraro</span>
+        <p>La memoria, la presenza e Theresa May</p>
         <span class="magazine-link">Leggi l'articolo</span>
       </a>
     </div>
@@ -931,22 +939,22 @@
     <div class="section-label fade-in">FAQ</div>
     <h2 class="fade-in">Domande <em>frequenti</em></h2>
     <div class="faq-list">
-      <div class="faq-item fade-in">
-        <h3>Si possono avere i gioielli su ordinazione?</h3>
+      <details class="faq-item fade-in">
+        <summary><h3>Si possono avere i gioielli su ordinazione?</h3></summary>
         <p>Sì: se un modello non è disponibile, viene realizzato su ordinazione. Molti modelli Ayen si possono avere anche interamente in argento, su commissione.</p>
-      </div>
-      <div class="faq-item fade-in">
-        <h3>Le collane della Jade Collection sono sempre disponibili?</h3>
+      </details>
+      <details class="faq-item fade-in">
+        <summary><h3>Le collane della Jade Collection sono sempre disponibili?</h3></summary>
         <p>Ogni collana della Jade Collection è un pezzo unico, perché ogni giada esiste una sola volta. Per questo non si possono realizzare su ordinazione e la scelta dipende dalle giade presenti in quel momento: scrivi ad Alessia per scoprire quali collane sono disponibili.</p>
-      </div>
-      <div class="faq-item fade-in">
-        <h3>Come posso ricevere informazioni sui gioielli?</h3>
+      </details>
+      <details class="faq-item fade-in">
+        <summary><h3>Come posso ricevere informazioni sui gioielli?</h3></summary>
         <p>Molti gioielli sono visibili nel catalogo del profilo WhatsApp di Alessia. Puoi anche richiedere il catalogo completo della collezione che ti interessa, per esempio Ayen Collection o Jade Collection, scrivendo su WhatsApp o con un messaggio privato su Instagram.</p>
-      </div>
-      <div class="faq-item fade-in">
-        <h3>Come posso vedere i gioielli dal vivo?</h3>
+      </details>
+      <details class="faq-item fade-in">
+        <summary><h3>Come posso vedere i gioielli dal vivo?</h3></summary>
         <p>Su appuntamento, oppure nei negozi che ospitano una selezione dei suoi gioielli. Scrivi ad Alessia per sapere dove trovarli in questo momento.</p>
-      </div>
+      </details>
     </div>
   </section>
 
@@ -954,7 +962,7 @@
 
   <section id="contatti">
     <div class="contact-left fade-in">
-      <h2>Parliamo <br>del <em>progetto</em></h2>
+      <h2>Per informazioni <br>e <em>appuntamenti</em></h2>
       <p>Per informazioni su gioielli, Jewellery Reading™, mostre o qualsiasi cosa ti abbia incuriosita.</p>
       <div class="contact-links">
         <a href="https://instagram.com/alessia_semeraro_jewellery" class="contact-link" target="_blank">
@@ -987,8 +995,7 @@
   <footer>
     <div class="footer-main">
       <div class="footer-left">
-        <a href="#home" class="footer-logo">Il Cielo Sopra</a>
-        <span class="footer-by">di Alessia Semeraro</span>
+        <a href="#home" class="footer-logo">Alessia Semeraro</a>
         <p class="footer-value">Gioielli contemporanei con un significato e il Jewellery Reading™ per scegliere ciò che davvero conta.</p>
         <p class="footer-place">Contemporary Jewellery Designer in Italia e online</p>
         <div class="footer-social">
