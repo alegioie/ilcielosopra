@@ -9,7 +9,7 @@
   <meta name="description" content="Gioielli contemporanei dal design essenziale: storie personali da indossare ogni giorno. Il Jewellery Reading, per scegliere ciò che senti tuo." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
       --cream: #f7f4ef;
@@ -76,7 +76,7 @@
     }
     .nav-links a:hover { color: var(--brass); }
 
-    #hero {
+    #home {
       min-height: 100vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -93,9 +93,10 @@
     }
     .hero-eyebrow {
       font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.7rem;
-      letter-spacing: 0.25em;
+      font-weight: 400;
+      font-size: 1.05rem;
+      letter-spacing: 0.18em;
+      line-height: 1.6;
       text-transform: uppercase;
       color: var(--brass);
       margin-bottom: 32px;
@@ -174,7 +175,7 @@
     @keyframes scrollPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
 
     #il-progetto {
-      padding: 160px 60px;
+      padding: 64px 60px;
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
@@ -184,8 +185,8 @@
     }
     .section-label {
       font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.68rem;
+      font-weight: 500;
+      font-size: 0.85rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--brass);
@@ -209,7 +210,7 @@
     #chi-sono {
       background: var(--ink);
       color: var(--cream);
-      padding: 140px 60px;
+      padding: 64px 60px;
       position: relative;
       overflow: hidden;
     }
@@ -313,12 +314,12 @@
       color: var(--ink-light);
     }
 
-    #collezioni-gioielli { padding: 160px 60px; max-width: 1200px; margin: 0 auto; }
+    #collezioni-gioielli { padding: 64px 60px; max-width: 1200px; margin: 0 auto; }
     .section-header {
       display: grid;
       grid-template-columns: 1fr 2fr;
       gap: 80px;
-      margin-bottom: 100px;
+      margin-bottom: 60px;
       align-items: end;
     }
     .section-header h2 {
@@ -344,8 +345,8 @@
     .card-body { padding: 40px 44px 48px; }
     .collezione-tag {
       font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.65rem;
+      font-weight: 500;
+      font-size: 0.85rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--brass);
@@ -400,7 +401,7 @@
     .limited:hover .limited-img img { transform: scale(1.03); }
     .limited .card-body { display: flex; flex-direction: column; justify-content: center; padding: 60px 50px; }
     .collezione-card.limited h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: 1.4rem; color: var(--brass); margin: 28px 0 12px; }
-    .mostre-opera { max-width: 1200px; margin: 120px auto 0; }
+    .mostre-opera { max-width: 1200px; margin: 80px auto 0; }
     .collezione-card.sale {
       grid-column: 1 / -1;
       display: grid;
@@ -415,7 +416,7 @@
     .sale-content p { font-size: 1.0rem; }
 
     #mostre {
-      padding: 160px 60px;
+      padding: 64px 60px;
       background: var(--cream-dark);
       position: relative;
       overflow: hidden;
@@ -460,8 +461,8 @@
       display: inline-block;
       margin-top: 32px;
       font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.65rem;
+      font-weight: 500;
+      font-size: 0.85rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--brass);
@@ -469,8 +470,8 @@
       padding: 8px 20px;
     }
 
-    #jewellery-reading { padding: 160px 60px; max-width: 1200px; margin: 0 auto; }
-    .coaching-header { margin-bottom: 100px; }
+    #jewellery-reading { padding: 64px 60px; max-width: 1200px; margin: 0 auto; }
+    .coaching-header { margin-bottom: 60px; }
     .coaching-header .section-label { margin-bottom: 20px; }
     .coaching-header h2 {
       font-family: 'Cormorant Garamond', serif;
@@ -482,7 +483,7 @@
     }
     .tm { font-size: 0.4em; vertical-align: super; line-height: 0; }
     .coaching-header h2 em { font-style: italic; color: var(--brass); }
-    .coaching-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 80px; }
+    .coaching-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 60px; }
     .coaching-manifesto { border-left: 2px solid var(--brass); padding-left: 32px; }
     .coaching-manifesto p {
       font-family: 'Cormorant Garamond', serif;
@@ -494,8 +495,8 @@
     }
     .coaching-manifesto p.plain { font-style: normal; font-size: 1.05rem; color: var(--ink-mid); }
     .coaching-offre { border-left: 2px solid var(--brass); padding-left: 32px; }
-    .coaching-offre h3 { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--brass); margin-bottom: 24px; }
-    .coaching-right p { font-size: 0.95rem; color: var(--ink-mid); margin-bottom: 20px; }
+    .coaching-offre h3 { font-family: 'Jost', sans-serif; font-weight: 500; font-size: 0.95rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--brass); margin-bottom: 24px; }
+    .coaching-right p { font-size: 1.0rem; color: var(--ink-mid); margin-bottom: 20px; }
     .coaching-formats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
     .format-card { background: var(--white); padding: 48px 36px; transition: background 0.3s; }
     .format-card:hover { background: var(--brass-pale); }
@@ -515,10 +516,10 @@
       margin-bottom: 16px;
       font-style: italic;
     }
-    .workshop-creativi { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--brass); max-width: 700px; }
+    .workshop-creativi { margin-top: 56px; padding-top: 36px; border-top: 1px solid var(--brass); max-width: 700px; }
     .workshop-creativi h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: 1.6rem; color: var(--ink); margin: 16px 0; }
-    .workshop-creativi p { font-size: 0.95rem; color: var(--ink-mid); }
-    .format-card p { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.75; }
+    .workshop-creativi p { font-size: 1.0rem; color: var(--ink-mid); }
+    .format-card p { font-size: 1.0rem; color: var(--ink-mid); line-height: 1.75; }
 
     #duetti { background: var(--ink); padding: 140px 60px; }
     .duetti-inner {
@@ -552,7 +553,7 @@
       line-height: 1.6;
     }
 
-    #magazine { padding: 160px 60px; max-width: 1200px; margin: 0 auto; }
+    #magazine { padding: 64px 60px; max-width: 1200px; margin: 0 auto; }
     .magazine-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-bottom: 60px; }
     .magazine-card { background: var(--white); padding: 0 0 36px; text-decoration: none; display: flex; flex-direction: column; transition: background 0.3s; }
     .magazine-card:hover { background: var(--brass-pale); }
@@ -561,12 +562,19 @@
     .magazine-card:hover .magazine-img img { transform: scale(1.04); }
     .magazine-card h3, .magazine-card p, .magazine-link { margin-left: 36px; margin-right: 36px; }
     .magazine-card h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: 1.45rem; line-height: 1.3; color: var(--ink); margin-bottom: 16px; }
-    .magazine-author { display: block; margin: -6px 36px 14px; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-light); }
-    .magazine-card p { font-size: 0.92rem; color: var(--ink-mid); line-height: 1.7; margin-bottom: 24px; flex-grow: 1; }
-    .magazine-link { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass); }
+    .magazine-author { display: block; margin: -6px 36px 14px; font-family: 'Jost', sans-serif; font-weight: 500; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-light); }
+    .magazine-card p { font-size: 1.0rem; color: var(--ink-mid); line-height: 1.7; margin-bottom: 24px; flex-grow: 1; }
+    .magazine-link { font-family: 'Jost', sans-serif; font-weight: 500; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass); }
     .magazine-cta { margin-top: 20px; }
+    #faq { padding: 64px 60px; max-width: 1200px; margin: 0 auto; }
+    #faq h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3.2rem); line-height: 1.15; color: var(--ink); margin: 20px 0 40px; }
+    #faq h2 em { font-style: italic; color: var(--brass); }
+    .faq-list { max-width: 820px; }
+    .faq-item { border-top: 1px solid var(--cream-dark); padding: 24px 0; }
+    .faq-item h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: 1.45rem; color: var(--ink); margin-bottom: 10px; }
+    .faq-item p { font-size: 1.0rem; color: var(--ink-mid); }
     #contatti {
-      padding: 140px 60px 80px;
+      padding: 64px 60px 48px;
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
@@ -582,20 +590,20 @@
       margin-bottom: 40px;
     }
     .contact-left h2 em { font-style: italic; color: var(--brass); }
-    .contact-left p { font-size: 0.95rem; color: var(--ink-mid); margin-bottom: 20px; max-width: 440px; }
-    .contact-links { margin-top: 48px; display: flex; flex-direction: column; gap: 20px; }
+    .contact-left p { font-size: 1.0rem; color: var(--ink-mid); margin-bottom: 20px; max-width: 440px; }
+    .contact-links { margin-top: 40px; display: flex; flex-direction: column; gap: 12px; }
     .contact-link { display: flex; align-items: center; gap: 20px; text-decoration: none; color: var(--ink); transition: color 0.3s; }
     .contact-link:hover { color: var(--brass); }
     .contact-link-label {
       font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.68rem;
+      font-weight: 500;
+      font-size: 0.85rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--ink-light);
-      width: 100px;
+      width: 140px;
     }
-    .contact-link-value { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; }
+    .contact-link-value { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1.05rem; font-style: normal; }
     .contact-right { display: flex; flex-direction: column; justify-content: flex-end; }
     .skyline-text {
       font-family: 'Cormorant Garamond', serif;
@@ -632,13 +640,13 @@
     @media (max-width: 900px) {
       nav { padding: 24px 32px; }
       .nav-links { display: none; }
-      #hero { grid-template-columns: 1fr; min-height: auto; }
+      #home { grid-template-columns: 1fr; min-height: auto; }
       .hero-left { padding: 120px 32px 60px; }
       .hero-right { height: 360px; }
       .hero-right::after { background: linear-gradient(to bottom, var(--cream) 0%, transparent 40%); }
-      #il-progetto, .designer-inner, .aemotions-inner, .duetti-inner, #contatti { grid-template-columns: 1fr; gap: 48px; padding: 80px 32px; }
-      #collezioni-gioielli, #jewellery-reading, #magazine { padding: 80px 32px; }
-      #mostre, #duetti { padding: 80px 32px; }
+      #il-progetto, .designer-inner, .aemotions-inner, .duetti-inner, #contatti { grid-template-columns: 1fr; gap: 40px; padding: 56px 32px; }
+      #collezioni-gioielli, #jewellery-reading, #magazine, #faq { padding: 56px 32px; }
+      #mostre, #duetti { padding: 56px 32px; }
       .section-header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 60px; }
       .collezioni-grid { grid-template-columns: 1fr; }
       .collezione-card.jade, .collezione-card.sale, .collezione-card.limited { grid-template-columns: 1fr; }
@@ -657,7 +665,7 @@
 <body>
 
   <nav>
-    <a href="#hero" class="nav-logo">Il Cielo Sopra</a>
+    <a href="#home" class="nav-logo">Il Cielo Sopra</a>
     <ul class="nav-links">
       <li><a href="#il-progetto">Il progetto</a></li>
       <li><a href="#chi-sono">Chi sono</a></li>
@@ -669,9 +677,9 @@
     </ul>
   </nav>
 
-  <section id="hero">
+  <section id="home">
     <div class="hero-left">
-      <p class="hero-eyebrow">Contemporary Jewellery · Jewellery Reading™</p>
+      <p class="hero-eyebrow">Contemporary Jewellery <br>Jewellery Reading™</p>
       <h1 class="hero-title">Alessia <br><em>Semeraro</em></h1>
       <a href="#il-progetto" class="hero-cta">Scopri il progetto</a>
     </div>
@@ -730,7 +738,7 @@
         <div class="section-label fade-in">Le collezioni</div>
         <h2 class="fade-in">Gioielli contemporanei <br>che <em>raccontano</em> una storia</h2>
       </div>
-      <p class="section-intro fade-in">Ogni gioiello parla di connessioni tra passato e presente, tra progetto e concetto, tra bellezza e significato.</p>
+      <p class="section-intro fade-in">Ogni gioiello parla di connessioni tra passato e presente, tra&nbsp;progetto&nbsp;e&nbsp;concetto, tra bellezza e significato.</p>
     </div>
     <div class="collezioni-grid">
 
@@ -919,6 +927,31 @@
 
   <div class="full-rule"></div>
 
+  <section id="faq">
+    <div class="section-label fade-in">FAQ</div>
+    <h2 class="fade-in">Domande <em>frequenti</em></h2>
+    <div class="faq-list">
+      <div class="faq-item fade-in">
+        <h3>Si possono avere i gioielli su ordinazione?</h3>
+        <p>Sì: se un modello non è disponibile, viene realizzato su ordinazione. Molti modelli Ayen si possono avere anche interamente in argento, su commissione.</p>
+      </div>
+      <div class="faq-item fade-in">
+        <h3>Le collane della Jade Collection sono sempre disponibili?</h3>
+        <p>Ogni collana della Jade Collection è un pezzo unico, perché ogni giada esiste una sola volta. Per questo non si possono realizzare su ordinazione e la scelta dipende dalle giade presenti in quel momento: scrivi ad Alessia per scoprire quali collane sono disponibili.</p>
+      </div>
+      <div class="faq-item fade-in">
+        <h3>Come posso ricevere informazioni sui gioielli?</h3>
+        <p>Molti gioielli sono visibili nel catalogo del profilo WhatsApp di Alessia. Puoi anche richiedere il catalogo completo della collezione che ti interessa, per esempio Ayen Collection o Jade Collection, scrivendo su WhatsApp o con un messaggio privato su Instagram.</p>
+      </div>
+      <div class="faq-item fade-in">
+        <h3>Come posso vedere i gioielli dal vivo?</h3>
+        <p>Su appuntamento, oppure nei negozi che ospitano una selezione dei suoi gioielli. Scrivi ad Alessia per sapere dove trovarli in questo momento.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="full-rule"></div>
+
   <section id="contatti">
     <div class="contact-left fade-in">
       <h2>Parliamo <br>del <em>progetto</em></h2>
@@ -954,7 +987,7 @@
   <footer>
     <div class="footer-main">
       <div class="footer-left">
-        <a href="#hero" class="footer-logo">Il Cielo Sopra</a>
+        <a href="#home" class="footer-logo">Il Cielo Sopra</a>
         <span class="footer-by">di Alessia Semeraro</span>
         <p class="footer-value">Gioielli contemporanei con un significato e il Jewellery Reading™ per scegliere ciò che davvero conta.</p>
         <p class="footer-place">Contemporary Jewellery Designer in Italia e online</p>
