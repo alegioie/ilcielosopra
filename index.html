@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Il Cielo Sopra — Alessia Semeraro</title>
+  <title>Alessia Semeraro · Contemporary Jewellery Designer</title>
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ilcielosopra.com/" />
+  <meta name="description" content="Gioielli contemporanei dal design essenziale: storie personali da indossare ogni giorno. Il Jewellery Reading, per scegliere ciò che senti tuo." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
@@ -59,7 +62,7 @@
       color: var(--ink);
       text-decoration: none;
     }
-    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
     .nav-links a {
       font-family: 'Jost', sans-serif;
       font-weight: 200;
@@ -103,7 +106,7 @@
       font-size: clamp(3.5rem, 6vw, 7rem);
       line-height: 1.0;
       color: var(--ink);
-      margin-bottom: 16px;
+      margin-bottom: 48px;
     }
     .hero-title em { font-style: italic; color: var(--brass); }
     .hero-subtitle {
@@ -116,6 +119,7 @@
     }
     .hero-cta {
       display: inline-block;
+      align-self: flex-start;
       font-family: 'Jost', sans-serif;
       font-weight: 300;
       font-size: 0.72rem;
@@ -169,7 +173,7 @@
     }
     @keyframes scrollPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
 
-    #filosofia {
+    #il-progetto {
       padding: 160px 60px;
       max-width: 1200px;
       margin: 0 auto;
@@ -197,9 +201,12 @@
     }
     .filosofia-body h2 em { font-style: italic; color: var(--brass); }
     .filosofia-body p { font-size: 1.0rem; color: var(--ink-mid); margin-bottom: 24px; max-width: 600px; }
+    .anime-list { list-style: none; max-width: 600px; margin: 0 0 24px; }
+    .anime-list li { position: relative; padding-left: 22px; margin-bottom: 12px; font-size: 1.0rem; color: var(--ink-mid); }
+    .anime-list li::before { content: ''; position: absolute; left: 0; top: 0.7em; width: 6px; height: 6px; border-radius: 50%; background: var(--brass); }
     .rule { width: 60px; height: 1px; background: var(--brass); margin: 48px 0; }
 
-    #designer {
+    #chi-sono {
       background: var(--ink);
       color: var(--cream);
       padding: 140px 60px;
@@ -223,6 +230,7 @@
       color: var(--cream);
       margin: 24px 0 40px;
     }
+    .designer-body h2 em { font-style: italic; color: var(--brass-light); }
     .designer-body p { font-size: 1.0rem; color: rgba(247,244,239,0.7); margin-bottom: 24px; max-width: 520px; }
     .designer-credentials { margin-top: 60px; }
     .designer-credentials h3 {
@@ -305,7 +313,7 @@
       color: var(--ink-light);
     }
 
-    #collezioni { padding: 160px 60px; max-width: 1200px; margin: 0 auto; }
+    #collezioni-gioielli { padding: 160px 60px; max-width: 1200px; margin: 0 auto; }
     .section-header {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -351,7 +359,7 @@
       margin-bottom: 20px;
       font-style: italic;
     }
-    .collezione-card p { font-size: 0.9rem; color: var(--ink-mid); line-height: 1.75; margin-bottom: 16px; }
+    .collezione-card p { font-size: 1.0rem; color: var(--ink-mid); line-height: 1.75; margin-bottom: 16px; }
 
     .collezione-card.jade {
       grid-column: 1 / -1;
@@ -384,6 +392,15 @@
       padding-left: 20px;
     }
 
+    .jade-testimonial { margin-top: 28px; font-size: 0.95rem; font-style: italic; color: rgba(247,244,239,0.8) !important; }
+    .jade-testimonial span { display: block; margin-top: 6px; font-style: normal; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass-light); }
+    .collezione-card.limited { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; }
+    .limited-img { overflow: hidden; min-height: 460px; }
+    .limited-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform 0.6s ease; }
+    .limited:hover .limited-img img { transform: scale(1.03); }
+    .limited .card-body { display: flex; flex-direction: column; justify-content: center; padding: 60px 50px; }
+    .collezione-card.limited h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: 1.4rem; color: var(--brass); margin: 28px 0 12px; }
+    .mostre-opera { max-width: 1200px; margin: 120px auto 0; }
     .collezione-card.sale {
       grid-column: 1 / -1;
       display: grid;
@@ -395,14 +412,15 @@
     .sale:hover .sale-img img { transform: scale(1.03); }
     .sale-content { padding: 60px 50px; display: flex; flex-direction: column; justify-content: center; }
     .sale .collezione-tag { color: var(--brass); }
+    .sale-content p { font-size: 1.0rem; }
 
-    #aemotions {
+    #mostre {
       padding: 160px 60px;
       background: var(--cream-dark);
       position: relative;
       overflow: hidden;
     }
-    #aemotions::before {
+    #mostre::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0;
@@ -426,6 +444,7 @@
       margin: 32px 0 40px;
     }
     .aemotions-left h2 em { font-style: italic; color: var(--brass); }
+    .aemotions-left h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: 1.6rem; color: var(--ink); margin-bottom: 24px; }
     .aemotions-left p { font-size: 1.0rem; color: var(--ink-mid); margin-bottom: 24px; }
     .aemotions-img { position: relative; }
     .aemotions-img::before {
@@ -450,16 +469,18 @@
       padding: 8px 20px;
     }
 
-    #coaching { padding: 160px 60px; max-width: 1200px; margin: 0 auto; }
+    #jewellery-reading { padding: 160px 60px; max-width: 1200px; margin: 0 auto; }
     .coaching-header { margin-bottom: 100px; }
+    .coaching-header .section-label { margin-bottom: 20px; }
     .coaching-header h2 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
-      font-size: clamp(2.5rem, 5vw, 5rem);
-      line-height: 1.0;
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      line-height: 1.15;
       color: var(--ink);
       max-width: 700px;
     }
+    .tm { font-size: 0.4em; vertical-align: super; line-height: 0; }
     .coaching-header h2 em { font-style: italic; color: var(--brass); }
     .coaching-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 80px; }
     .coaching-manifesto { border-left: 2px solid var(--brass); padding-left: 32px; }
@@ -472,8 +493,10 @@
       margin-bottom: 20px;
     }
     .coaching-manifesto p.plain { font-style: normal; font-size: 1.05rem; color: var(--ink-mid); }
+    .coaching-offre { border-left: 2px solid var(--brass); padding-left: 32px; }
+    .coaching-offre h3 { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--brass); margin-bottom: 24px; }
     .coaching-right p { font-size: 0.95rem; color: var(--ink-mid); margin-bottom: 20px; }
-    .coaching-formats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .coaching-formats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
     .format-card { background: var(--white); padding: 48px 36px; transition: background 0.3s; }
     .format-card:hover { background: var(--brass-pale); }
     .format-icon {
@@ -484,7 +507,7 @@
       margin-bottom: 20px;
       line-height: 1;
     }
-    .format-card h4 {
+    .format-card h3 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 400;
       font-size: 1.3rem;
@@ -492,6 +515,9 @@
       margin-bottom: 16px;
       font-style: italic;
     }
+    .workshop-creativi { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--brass); max-width: 700px; }
+    .workshop-creativi h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: 1.6rem; color: var(--ink); margin: 16px 0; }
+    .workshop-creativi p { font-size: 0.95rem; color: var(--ink-mid); }
     .format-card p { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.75; }
 
     #duetti { background: var(--ink); padding: 140px 60px; }
@@ -526,6 +552,19 @@
       line-height: 1.6;
     }
 
+    #magazine { padding: 160px 60px; max-width: 1200px; margin: 0 auto; }
+    .magazine-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-bottom: 60px; }
+    .magazine-card { background: var(--white); padding: 0 0 36px; text-decoration: none; display: flex; flex-direction: column; transition: background 0.3s; }
+    .magazine-card:hover { background: var(--brass-pale); }
+    .magazine-img { height: 220px; overflow: hidden; margin-bottom: 28px; }
+    .magazine-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+    .magazine-card:hover .magazine-img img { transform: scale(1.04); }
+    .magazine-card h3, .magazine-card p, .magazine-link { margin-left: 36px; margin-right: 36px; }
+    .magazine-card h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: 1.45rem; line-height: 1.3; color: var(--ink); margin-bottom: 16px; }
+    .magazine-author { display: block; margin: -6px 36px 14px; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-light); }
+    .magazine-card p { font-size: 0.92rem; color: var(--ink-mid); line-height: 1.7; margin-bottom: 24px; flex-grow: 1; }
+    .magazine-link { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass); }
+    .magazine-cta { margin-top: 20px; }
     #contatti {
       padding: 140px 60px 80px;
       max-width: 1200px;
@@ -568,17 +607,24 @@
       user-select: none;
     }
 
-    footer {
-      border-top: 1px solid var(--cream-dark);
-      padding: 40px 60px;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .footer-copy { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.7rem; letter-spacing: 0.15em; color: var(--ink-light); }
-    .footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.95rem; color: var(--brass); }
+    footer { border-top: 1px solid var(--cream-dark); padding: 60px 60px 32px; max-width: 1200px; margin: 0 auto; }
+    .footer-main { display: grid; grid-template-columns: 2fr 1fr; gap: 80px; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
+    .footer-by { display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; color: var(--brass); margin: 4px 0 20px; }
+    .footer-value { font-size: 0.95rem; color: var(--ink-mid); max-width: 460px; margin-bottom: 12px; }
+    .footer-place { font-size: 0.85rem; color: var(--ink-light); margin-bottom: 24px; }
+    .footer-social { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; }
+    .footer-social a { display: inline-flex; opacity: 0.85; transition: opacity 0.3s; }
+    .footer-social a:hover { opacity: 1; }
+    .footer-social img, .footer-social svg { width: 20px; height: 20px; display: block; }
+    .footer-social img { opacity: 0.75; }
+    .footer-social a, .footer-right a { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-mid); text-decoration: none; transition: color 0.3s; }
+    .footer-social a:hover, .footer-right a:hover { color: var(--brass); }
+    .footer-right { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; text-align: right; }
+    .footer-shortcut { margin: 48px 0 32px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; }
+    .footer-shortcut a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--brass); padding-bottom: 2px; }
+    .footer-shortcut a:hover { color: var(--brass); }
+    .footer-socket { border-top: 1px solid var(--cream-dark); padding-top: 20px; font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.7rem; letter-spacing: 0.12em; color: var(--ink-light); }
     .full-rule { width: 100%; height: 1px; background: linear-gradient(to right, transparent, var(--cream-dark), transparent); }
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -590,18 +636,22 @@
       .hero-left { padding: 120px 32px 60px; }
       .hero-right { height: 360px; }
       .hero-right::after { background: linear-gradient(to bottom, var(--cream) 0%, transparent 40%); }
-      #filosofia, .designer-inner, .aemotions-inner, .duetti-inner, #contatti { grid-template-columns: 1fr; gap: 48px; padding: 80px 32px; }
-      #collezioni, #coaching { padding: 80px 32px; }
-      #aemotions, #duetti { padding: 80px 32px; }
+      #il-progetto, .designer-inner, .aemotions-inner, .duetti-inner, #contatti { grid-template-columns: 1fr; gap: 48px; padding: 80px 32px; }
+      #collezioni-gioielli, #jewellery-reading, #magazine { padding: 80px 32px; }
+      #mostre, #duetti { padding: 80px 32px; }
       .section-header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 60px; }
       .collezioni-grid { grid-template-columns: 1fr; }
-      .collezione-card.jade, .collezione-card.sale { grid-template-columns: 1fr; }
+      .collezione-card.jade, .collezione-card.sale, .collezione-card.limited { grid-template-columns: 1fr; }
       .coaching-intro { grid-template-columns: 1fr; gap: 40px; }
       .coaching-formats { grid-template-columns: 1fr; }
+      .magazine-grid { grid-template-columns: 1fr; }
       .gallery-track { padding: 0 32px; }
       .gallery-label { padding: 0 32px; }
-      footer { flex-direction: column; gap: 16px; text-align: center; padding: 40px 32px; }
+      footer { padding: 48px 32px 24px; }
+      .footer-main { grid-template-columns: 1fr; gap: 40px; }
+      .footer-right { align-items: flex-start; text-align: left; }
     }
+    @media (max-width: 1100px) { .nav-links { display: none; } }
   </style>
 </head>
 <body>
@@ -609,25 +659,24 @@
   <nav>
     <a href="#hero" class="nav-logo">Il Cielo Sopra</a>
     <ul class="nav-links">
-      <li><a href="#filosofia">Filosofia</a></li>
-      <li><a href="#designer">Designer</a></li>
-      <li><a href="#collezioni">Collezioni</a></li>
-      <li><a href="#coaching">Coaching</a></li>
-      <li><a href="#aemotions">AEmotions</a></li>
-      <li><a href="#gallery">Galleria</a></li>
+      <li><a href="#il-progetto">Il progetto</a></li>
+      <li><a href="#chi-sono">Chi sono</a></li>
+      <li><a href="#collezioni-gioielli">Collezioni gioielli</a></li>
+      <li><a href="#mostre">Mostre</a></li>
+      <li><a href="#jewellery-reading">Jewellery Reading</a></li>
+      <li><a href="#magazine">Magazine</a></li>
       <li><a href="#contatti">Contatti</a></li>
     </ul>
   </nav>
 
   <section id="hero">
     <div class="hero-left">
-      <p class="hero-eyebrow">Contemporary Jewellery &amp; Coaching</p>
-      <h1 class="hero-title">Il Cielo<br><em>Sopra</em></h1>
-      <p class="hero-subtitle">Sopra ogni cielo ce n'è un altro.<br>Infinito, carico di possibilità.</p>
-      <a href="#filosofia" class="hero-cta">Scopri il progetto</a>
+      <p class="hero-eyebrow">Contemporary Jewellery · Jewellery Reading™</p>
+      <h1 class="hero-title">Alessia <br><em>Semeraro</em></h1>
+      <a href="#il-progetto" class="hero-cta">Scopri il progetto</a>
     </div>
     <div class="hero-right">
-      <img src="images/hero.jpg" alt="Jade Collection — Il Cielo Sopra" />
+      <img src="images/hero.jpg" alt="Collana Jade Collection con giada intagliata e cerchi in ottone, Alessia Semeraro" />
     </div>
     <div class="hero-scroll">
       <span>Scorri</span>
@@ -637,220 +686,255 @@
 
   <div class="full-rule"></div>
 
-  <section id="filosofia">
+  <section id="il-progetto">
     <div class="section-label fade-in">Il progetto</div>
     <div class="filosofia-body">
-      <h2 class="fade-in">Sopra ogni cielo<br>ce n'è un <em>altro</em></h2>
-      <p class="fade-in">"Il Cielo Sopra" nasce dall'idea che sopra ogni cielo ce n'è un altro: infinito, carico di possibilità e simbolo di speranza. Un concetto ispirato al proverbio inglese <em>the sky beyond</em> — il superamento dei limiti, la ricerca continua di qualcosa di più grande, di più profondo.</p>
-      <p class="fade-in">È un invito a guardare oltre, a riscoprire la meraviglia che si cela nei dettagli, a lasciarsi ispirare dall'idea che il viaggio verso nuovi orizzonti non ha mai fine.</p>
+      <h2 class="fade-in">Il Cielo <em>Sopra</em></h2>
+      <p class="fade-in">Il nome nasce dal proverbio inglese <em>the sky beyond</em>, cioè "sopra ogni cielo c'è un altro cielo". È una filosofia di vita: oltre ciò che riusciamo a vedere esiste sempre un nuovo orizzonte e la bellezza non è una meta, ma una scoperta continua.</p>
+      <p class="fade-in">Ogni gioiello porta con sé questa filosofia: è un pensiero reso indossabile, che racconta chi sei e chi stai diventando.</p>
       <div class="rule fade-in"></div>
-      <p class="fade-in">Il progetto ha tre anime: la creazione di gioielli con una forte componente concettuale e artistica, l'esposizione di pezzi unici come opere d'arte, e il jewellery coaching — un percorso che aiuta le persone a usare i gioielli per esprimere la propria personalità e creare impatto nel contesto sociale e professionale.</p>
+      <p class="fade-in">Il Cielo Sopra è lo studio e il progetto creativo di Alessia Semeraro, designer del gioiello contemporaneo. Riunisce tre anime attorno a un unico centro, il gioiello:</p>
+      <ul class="anime-list fade-in">
+        <li>la progettazione e la realizzazione di gioielli contemporanei</li>
+        <li>i progetti espositivi di pezzi unici come opere d'arte</li>
+        <li>il Jewellery Reading™, che aiuta le donne a usare il gioiello per esprimere la propria identità e creare una presenza significativa nella vita personale e professionale</li>
+      </ul>
+      <p class="fade-in">Il gioiello contemporaneo non è un oggetto decorativo né un accessorio di moda. È un linguaggio in cui materia, significato e corpo si incontrano. Ogni gioiello unisce arte e design e si completa quando viene indossato.</p>
     </div>
   </section>
 
   <div class="full-rule"></div>
 
-  <section id="designer">
+  <section id="chi-sono">
     <div class="designer-inner">
       <div class="designer-body">
         <div class="section-label">Chi sono</div>
-        <h2 class="fade-in">Alessia<br>Semeraro</h2>
-        <p class="fade-in">Contemporary jewellery designer-maker con vent'anni di esperienza nel design e nella realizzazione di gioielli contemporanei. Italiana, formatasi a Londra e Firenze, con una lunga storia nel mondo del gioiello di lusso internazionale.</p>
-        <p class="fade-in">Il mio approccio è caratterizzato dall'uso di materiali non convenzionali — ferro, ottone, legno bruciato — accanto a metalli preziosi come oro 24ct e argento riciclato. L'estetica è minimalista e astratta, centrata sul concetto di integrità dei materiali, proporzione ed equilibrio nel design.</p>
-        <p class="fade-in">Nel mio percorso canalizzo emozioni profondamente personali, esplorando temi di resilienza, identità e il profondo viaggio della femminilità e della maternità. Ogni gioiello è un pensiero da indossare — non un ornamento, ma un'estensione silenziosa di chi lo porta.</p>
-        <div class="designer-credentials fade-in">
-          <h3>Formazione</h3>
-          <div class="credential-item"><strong>Central St. Martin's — Londra</strong>Jewellery Design and Making</div>
-          <div class="credential-item"><strong>London Guildhall University — Londra</strong>Jewellery Design and Making</div>
-          <div class="credential-item"><strong>Alchimia Contemporary Jewellery School — Firenze</strong>Con Manfred Bischoff e Manuel Vilhena</div>
-          <div class="credential-item"><strong>Morley Institute — Londra</strong>Diploma di Fashion Millinery</div>
-        </div>
+        <h2 class="fade-in">Alessia Semeraro, <br><em>Contemporary Jewellery Designer</em></h2>
+        <p class="fade-in">Da oltre vent'anni Alessia Semeraro crea gioielli contemporanei, tra ricerca artistica e collezioni indossabili.</p>
+        <p class="fade-in">Al centro della sua ricerca c'è la materia: ottone, argento, oro, ferro e legno bruciato, spesso recuperati e trasformati. Ogni materiale porta con sé una storia, che la trasformazione custodisce e fa continuare in una forma nuova. L'estetica è essenziale, attenta alla proporzione e all'equilibrio. La ricerca di significato nasce dalla sua storia personale: gioielli profondi e semplici allo stesso tempo.</p>
+        <p class="fade-in">Alessia studia design del gioiello prima a Londra, alla Central St. Martin's e alla London Guildhall University, poi a Firenze, ad Alchimia Contemporary Jewellery School. Al Morley College di Londra si diploma in Fashion Millinery, il design del cappello.</p>
+        <p class="fade-in">È ideatrice e cofondatrice di AGC, la prima associazione italiana di gioiello contemporaneo nata a Trieste nel 2004. Ha esposto in musei e gallerie internazionali. I suoi lavori compaiono in pubblicazioni dedicate al gioiello contemporaneo e fanno parte di collezioni pubbliche e private. Per Gorizia Capitale Europea della Cultura 2025 ha presentato una mostra personale che racconta tutto il suo percorso artistico.</p>
+        <p class="fade-in">A questo percorso affianca gli anni trascorsi nelle grandi maison del gioiello di lusso tra Londra e Barcellona, a contatto ogni giorno con chi sceglie un gioiello. Da questa duplice esperienza nasce il Jewellery Reading™, un metodo per scegliere il gioiello giusto per sé.</p>
       </div>
       <div class="designer-photo fade-in">
-        <img src="images/chi%20sono.jpg" alt="Alessia Semeraro" />
+        <img src="images/alessia-semeraro-contemporary-jewellery-designer.jpg" alt="Alessia Semeraro, Contemporary Jewellery Designer" />
       </div>
     </div>
   </section>
 
   <div class="full-rule"></div>
 
-  <section id="collezioni">
+  <section id="collezioni-gioielli">
     <div class="section-header">
       <div>
         <div class="section-label fade-in">Le collezioni</div>
-        <h2 class="fade-in">Gioielli che<br><em>raccontano</em></h2>
+        <h2 class="fade-in">Gioielli contemporanei <br>che <em>raccontano</em> una storia</h2>
       </div>
-      <p class="section-intro fade-in">Ogni gioiello parla di connessioni tra passato e presente, tra progetto e concetto, tra bellezza e significato. Non si chiede scintillio — si cerca qualcosa che risuoni con chi lo indossa.</p>
+      <p class="section-intro fade-in">Ogni gioiello parla di connessioni tra passato e presente, tra progetto e concetto, tra bellezza e significato.</p>
     </div>
     <div class="collezioni-grid">
 
       <div class="collezione-card fade-in">
         <div class="card-img-wrap">
-          <img src="images/collezione%20Ayen.jpg" alt="Collezione Ayen" style="object-position: center center;" />
+          <img src="images/collezione%20Ayen.jpg" alt="Gioielli Ayen Collection in ottone martellato e argento, Alessia Semeraro" style="object-position: center center;" />
         </div>
         <div class="card-body">
           <div class="collezione-tag">Ottone &amp; Argento</div>
           <h3>Ayen Collection</h3>
-          <p>"Ayen" significa "occhio" in amarico, la lingua originaria di mio figlio. Nasce dai suoi primissimi schizzi infantili — volti con grandi occhi, linee incerte e cariche di emozioni. Una collezione che celebra la scoperta e la dolcezza dell'infanzia, trasformata in forma da indossare. Ogni colpo di martello lascia un segno unico: nessun gioiello è uguale a un altro.</p>
+          <p>Ayen significa "occhio" in amarico. La collezione nasce dai primi disegni del figlio della designer: occhi, volti, il sole, tracciati in linee irregolari e spontanee. In quei segni Alessia ha dato corpo alla propria esperienza di vita, trasformandoli in gioielli dedicati alla famiglia e al legame che la tiene unita.</p>
+          <p>Ogni gioiello è realizzato in filo di ottone e argento, saldato e martellato. I colpi del martello danno al metallo luce e movimento e rendono ogni pezzo unico.</p>
+          <p>Indossabili in molteplici combinazioni: un bracciale diventa un pendente, una collana si reinventa. Ogni pezzo è un invito al gioco: è chi lo indossa a decidere come portarlo, rendendo ogni combinazione interamente sua.</p>
         </div>
       </div>
 
       <div class="collezione-card fade-in">
         <div class="card-img-wrap">
-          <img src="images/LIB%20collection.jpg" alt="Collezione Lib" />
+          <img src="images/LIB%20collection.jpg" alt="Gioielli a forma di cuore in ottone, Lib Collection, Alessia Semeraro" />
         </div>
         <div class="card-body">
           <div class="collezione-tag">Ottone &amp; Argento</div>
           <h3>Lib Collection</h3>
-          <p>"Lib" significa "cuore" in amarico — un luogo interiore dove tutto ha inizio. La collezione trasforma i dettagli anatomici del cuore in linee essenziali e stilizzate. Ispirata alla mostra "Where the Hearts are Born", riflette un approccio minimalista e scultoreo.</p>
+          <p>Lib significa "cuore" in amarico, un luogo interiore dove tutto ha inizio. Ispirata alla mostra "Dove nascono i cuori", presentata a Gorizia Capitale Europea della Cultura 2025, la collezione trasforma il cuore anatomico in linee essenziali e scolpite. Minimalista e profondamente sentita.</p>
         </div>
       </div>
 
       <div class="collezione-card jade fade-in">
         <div class="jade-img">
-          <img src="images/collezione%20Jade.jpg" alt="Jade Collection" />
+          <img src="images/collezione%20Jade.jpg" alt="Collana con giada intagliata in ottone e argento, Jade Collection, Alessia Semeraro" />
         </div>
         <div class="jade-content">
-          <div class="collezione-tag">Giade orientali — Pezzi unici</div>
+          <div class="collezione-tag">Giade orientali · Pezzi unici</div>
           <h3>Jade Collection</h3>
-          <p>La Jade Collection celebra la bellezza e l'aura delle giade orientali. Ispirata ai draghi stilizzati e all'iconografia storica cinese, ogni giada è montata su collane in ottone e argento a tre cerchi — il cerchio simboleggia continuità e armonia, il tre richiama il ciclo Cielo-Uomo-Terra. Solo collane. Pezzi non più riproducibili.</p>
-          <p class="jade-quote">"Indossare questo gioiello significa stare in equilibrio tra ciò che si è e ciò che si vive."</p>
+          <p>Jade celebra la bellezza e l'aura delle giade orientali. Ogni pendente è una giada unica ispirata agli antichi disegni di draghi e all'iconografia storica cinese e valorizzata da una collana contemporanea in ottone e argento. Tre cerchi intrecciati: continuità, armonia, il ciclo Cielo-Uomo-Terra.</p>
+          <p>Il design che incornicia ogni giada è volutamente minimale e sobrio: una struttura silenziosa che si fa da parte per lasciar parlare la pietra. Ogni scelta nella lavorazione del metallo esiste per esaltare la gemma, non per competere con essa. Ogni collana è un pezzo unico perché ogni giada esiste una sola volta e non si può riprodurre.</p>
+          <p class="jade-quote">"Le giade sono talismani di protezione, di buona fortuna e di armonia, quell'equilibrio tra ciò che si è e ciò che si vive."</p>
+          <p class="jade-testimonial">"Trovo sempre l'occasione per indossare la mia collana con giada."<span>Tiziana, Trieste</span></p>
         </div>
       </div>
 
-      <div class="collezione-card sale fade-in">
-        <div class="sale-img">
-          <img src="images/collana%20sale%20%281%29.jpg" alt="Collana di Sale" />
+      <div class="collezione-card limited fade-in">
+        <div class="limited-img">
+          <img src="images/fiha-mano-fico-amuleto-portafortuna-alessia-semeraro.jpg" alt="Fiha, amuleto portafortuna a mano fico in madreperla in un ovale di ottone martellato, Alessia Semeraro" />
         </div>
-        <div class="sale-content">
-          <div class="collezione-tag">Ferro &amp; Sale — Opera unica</div>
-          <h3>Collana di Sale</h3>
-          <p>Sale marino, filo di ferro, garza di cotone. Il sale a contatto con il ferro, la garza che si tinge di ruggine, il filo che si spezza. La materia muta forma — simbolo della capacità di trasformare la sofferenza in memoria, in speranza. Un'opera viva che evolve nel tempo. Non un gioiello da conservare — un gioiello da abitare.</p>
+        <div class="card-body">
+          <div class="collezione-tag">Pochi esemplari</div>
+          <h3>Limited Edition</h3>
+          <p>Piccole serie in pochi esemplari, nate da un simbolo o da un gesto quotidiano e ripensate in chiave contemporanea: oggetti da collezione da indossare e custodire, presentati una volta l'anno.</p>
+          <h4>Fiha, la mano fico portafortuna</h4>
+          <p>Fiha è la prima Limited Edition: una collezione di amuleti portafortuna ispirati alla mano fico, antico gesto di protezione. Piccole mani in madreperla intagliata, sospese in un ovale di filo d'ottone come un antico cammeo.</p>
         </div>
       </div>
+
 
     </div>
   </section>
 
   <div class="full-rule"></div>
 
-  <section id="aemotions">
+  <section id="mostre">
     <div class="aemotions-inner">
       <div class="aemotions-left fade-in">
-        <div class="section-label">Progetto artistico</div>
-        <h2>AEmotions &amp;<br><em>Where Hearts<br>Are Born</em></h2>
-        <p>A marzo 2025, nell'ambito della Gorizia Design Week e di Gorizia Capitale Europea della Cultura 2025, ho presentato AEmotions — un progetto che intreccia gioielli d'autore contemporanei e fotografia emotiva.</p>
-        <p>"Where the Hearts are Born" è il capitolo espositivo: i miei gioielli in dialogo con la fotografia di Eleonora Oleotto. Forme e materiali si intrecciano creando un ponte tra esperienza e percezione, tra ciò che nasce e ciò che si trasforma.</p>
-        <p>Un racconto di vent'anni di vita e ricerca — non solo una mostra, ma un ponte tra cuore e arte.</p>
-        <span class="aemotions-tag">Gorizia Design Week 2025 — Capitale Europea della Cultura</span>
+        <div class="section-label">Mostre</div>
+        <h2>Gioielli di <em>ricerca</em></h2>
+        <h3>AEmotions, mostra di gioielli e fotografia</h3>
+        <p>AEmotions è un progetto artistico che intreccia il gioiello contemporaneo di Alessia Semeraro e la fotografia emozionale di Eleonora Oleotto, presentato a Gorizia Capitale Europea della Cultura 2025. Attraverso il proprio percorso artistico, le due artiste raccontano come le esperienze di vita entrano nel loro lavoro, tra ciò che nasce e ciò che si trasforma.</p>
+        <p>"Dove nascono i cuori" è il capitolo finale dell'esposizione e rappresenta il cuore come luogo interiore da cui tutto ha inizio: le emozioni, i legami, la forma stessa dei gioielli.</p>
+        <p>Un racconto di vent'anni di vita e di ricerca, un ponte tra cuore e arte.</p>
+        <span class="aemotions-tag">Gorizia Capitale Europea della Cultura 2025</span>
       </div>
       <div class="aemotions-img fade-in">
-        <img src="images/aemotions%20cuore.jpg" alt="AEmotions — Where Hearts Are Born" />
+        <img src="images/aemotions%20cuore.jpg" alt="AEmotions, gioiello design Alessia Semeraro e fotografia di Eleonora Oleotto" />
       </div>
+    </div>
+    <div class="mostre-opera">
+        <div class="collezione-card sale fade-in">
+          <div class="sale-img">
+            <img src="images/collana%20sale%20%281%29.jpg" alt="Collana di Sale · Io Vivo, gioiello d'arte in ferro, sale e garza di Alessia Semeraro" />
+          </div>
+          <div class="sale-content">
+            <div class="collezione-tag">Ferro &amp; Sale · Opera unica</div>
+            <h3>Collana di Sale · Io Vivo</h3>
+            <p>Sale marino, filo di ferro, garza di cotone. Il sale a contatto con il ferro, la garza che si tinge di ruggine, il filo che si spezza. La materia muta forma ed è il simbolo della capacità di trasformare la sofferenza in memoria e in speranza. Un'opera viva che evolve nel tempo: un gioiello da abitare, più che da conservare.</p>
+          </div>
+        </div>
     </div>
   </section>
 
   <div class="full-rule"></div>
 
-  <section id="coaching">
+  <section id="jewellery-reading">
     <div class="coaching-header fade-in">
-      <div class="section-label">Jewellery Coaching</div>
-      <h2>Il gioiello<br>che <em>racconta</em><br>chi sei</h2>
+      <div class="section-label">Jewellery Reading</div>
+      <h2>Jewellery Reading<sup class="tm">™</sup> <br><em>leggere il gioiello</em> che racconta chi sei</h2>
     </div>
     <div class="coaching-intro">
-      <div class="coaching-manifesto fade-in">
-        <p>Non ti dico cosa va di moda.</p>
-        <p>Non ti dico cosa devi comprare.</p>
-        <p class="plain">I gioielli possiedono una dimensione emotiva profonda. Ti aiuto a svelarla e a utilizzarla per esprimere a pieno la tua personalità.</p>
-      </div>
       <div class="coaching-right fade-in">
-        <p>Imparerai a usare i gioielli per raccontarti, influenzare la tua immagine e creare un impatto significativo nel tuo ambiente sociale e professionale.</p>
-        <p>Scegliere un gioiello per sé è un atto di indipendenza emotiva. I gioielli non sono semplici decorazioni: portano messaggi, raccontano di noi agli altri e al mondo.</p>
-        <p>Lavoro come un editor di gioielli — creo narrazioni che ti somigliano, dialoghi tra contemporaneo e vintage.</p>
+        <p>Il metodo Jewellery Reading™ non riguarda la moda. Non si tratta di dirti cosa comprare. Riguarda qualcosa di più intimo: imparare a usare il gioiello come un linguaggio. È l'unico metodo che trasforma il gioiello in uno strumento per conoscerti, fare chiarezza e scegliere ciò che davvero conta.</p>
+        <p>Alessia si presenta come curatrice di gioielli: costruisce narrazioni che intrecciano contemporaneo e vintage, forma e memoria, ciò che sei oggi e da dove vieni.</p>
+      </div>
+      <div class="coaching-offre fade-in">
+        <h3>Cosa offre il Reading</h3>
+        <ul class="anime-list">
+          <li>Imparare a usare i gioielli per raccontare la tua storia</li>
+          <li>Renderti riconoscibile grazie a un dettaglio che parla di te</li>
+          <li>Scegliere il gioiello giusto per ogni occasione, dall'ufficio alla sera, per dare forma alla tua immagine</li>
+          <li>Presentarti con sicurezza nei contesti professionali e sociali</li>
+          <li>Aprire il tuo cassetto delle gioie con occhi nuovi, senza regole, senza giudizio</li>
+          <li>Unire contemporaneo e vintage in una visione coerente e personale</li>
+        </ul>
       </div>
     </div>
     <div class="coaching-formats">
       <div class="format-card fade-in">
         <div class="format-icon">I</div>
-        <h4>Consulenza personalizzata</h4>
-        <p>Un incontro dedicato per scoprire il gioiello giusto per te — il tuo stile, la tua personalità, la donna che sei adesso.</p>
+        <h3>Il cassetto delle gioie, incontri di gruppo</h3>
+        <p>Un incontro tra donne per parlare di gioielli in modo autentico, senza regole e senza giudizio. Ognuna porta tre gioielli del proprio cassetto e insieme si scopre che cosa raccontano. Gli incontri sono ospitati da negozi e spazi selezionati.</p>
       </div>
       <div class="format-card fade-in">
         <div class="format-icon">II</div>
-        <h4>Incontri di gruppo</h4>
-        <p>Momenti liberi tra donne per parlare di gioielli in modo autentico, senza regole e senza giudizio. Aprire il cassetto dei gioielli con occhi nuovi.</p>
+        <h3>Consulenza personalizzata</h3>
+        <p>Un incontro individuale, online o in presenza, per scoprire il gioiello giusto per te: per un'occasione speciale, per segnare un momento di passaggio o per conoscerti meglio.</p>
       </div>
-      <div class="format-card fade-in">
-        <div class="format-icon">III</div>
-        <h4>Workshop</h4>
-        <p>"Da zero a gioiello" — trasforma un oggetto già esistente in un gioiello contemporaneo unico e personale. Un processo alchemico per scoprire la propria creatività.</p>
-      </div>
+    </div>
+    <div class="workshop-creativi fade-in">
+      <div class="section-label">Per chi crea gioielli</div>
+      <h3>Workshop per designer: costruisci la tua collezione di gioielli</h3>
+      <p>Un workshop individuale per designer e creativi che vogliono dare forma a una collezione coerente, dall'idea alla proposta finale.</p>
     </div>
   </section>
 
   <div class="full-rule"></div>
 
-  <section id="duetti">
-    <div class="duetti-inner">
-      <div class="duetti-img fade-in">
-        <img src="images/duetto4.jpg" alt="I Duetti — contemporaneo e vintage" />
-      </div>
-      <div class="duetti-right">
-        <div class="section-label fade-in">Un format esclusivo</div>
-        <h2 class="fade-in">I <em>Duetti</em></h2>
-        <p class="fade-in">Il gioiello contemporaneo racconta chi sei oggi. Il vintage rappresenta la tua storia, la tua memoria. Insieme, raccontano unendo presente e passato.</p>
-        <p class="fade-in">I Duetti sono combinazioni di gioielli Ayen con pezzi vintage selezionati negli anni durante i miei viaggi nel mondo. Ogni abbinamento è pensato per la persona, non per l'occasione.</p>
-        <div class="duetti-rule fade-in"></div>
-        <p class="duetti-quote fade-in">"Quando combini il vintage al contemporaneo, comunichi al mondo un'immagine completa di te stessa."</p>
-      </div>
-    </div>
-  </section>
 
-  <div class="full-rule"></div>
 
-  <section id="gallery">
-    <p class="gallery-label fade-in">Galleria</p>
-    <div class="gallery-track-wrapper" id="galleryTrack">
-      <div class="gallery-track">
-        <div class="gallery-item"><img src="images/ayen%20petali.jpg" alt="Ayen — composizione con petali" loading="lazy" /></div>
-        <div class="gallery-item"><img src="images/ayen2.jpg" alt="Ayen — collana e orecchini ottone" loading="lazy" /></div>
-        <div class="gallery-item"><img src="images/ayen%20purple.jpg" alt="Ayen — indossata su prugna" loading="lazy" /></div>
-        <div class="gallery-item"><img src="images/trilogy.jpg" alt="Ayen — trilogia cerchi ottone e argento" loading="lazy" /></div>
-        <div class="gallery-item"><img src="images/giada%20verde%20mela%20%281%29.jpg" alt="Jade — giada verde mela indossata" loading="lazy" /></div>
-        <div class="gallery-item"><img src="images/cappellino%20e%20pesci.jpg" alt="Alessia con fascinator" loading="lazy" /></div>
-        <div class="gallery-item"><img src="images/duetto3.jpg" alt="Duetto — contemporaneo e vintage" loading="lazy" /></div>
-        <div class="gallery-item"><img src="images/Barcolana.jpg" alt="Barcolana — orecchini vela ottone" loading="lazy" /></div>
-        <div class="gallery-item"><img src="images/ayen3.jpg" alt="Ayen — cerchi e orecchini su grigio" loading="lazy" /></div>
-        <div class="gallery-item"><img src="images/3c%20e%20bracc.jpg" alt="Ayen — tre cerchi e bracciale" loading="lazy" /></div>
-        <div class="gallery-item"><img src="images/IMG_4155-EDIT.jpg" alt="Jade — collana rossa indossata" loading="lazy" /></div>
-        <div class="gallery-item"><img src="images/orecchini%202c.jpg" alt="Ayen — orecchini due cerchi ottone" loading="lazy" /></div>
-        <div class="gallery-item"><img src="images/giada%20cuore.jpg" alt="Jade — giada cuore" loading="lazy" /></div>
-        <div class="gallery-item"><img src="images/IMG_1434.jpg" alt="Ayen — composizione collana e orecchini" loading="lazy" /></div>
-        <div class="gallery-item"><img src="images/duetto4.jpg" alt="Duetto — vintage e contemporaneo" loading="lazy" /></div>
-        <div class="gallery-item"><img src="images/farfalla.jpg" alt="Jade — farfalla in giada grigia" loading="lazy" /></div>
-        <div class="gallery-item"><img src="images/pesciolino%20corallo.jpg" alt="Jade — pesciolino corallo" loading="lazy" /></div>
-        <div class="gallery-item"><img src="images/giada%20mask%20%281%29.jpg" alt="Jade — maschera giada verde" loading="lazy" /></div>
-        <div class="gallery-item"><img src="images/giada%20rossa%20scura.jpg" alt="Jade — giada rossa scura indossata" loading="lazy" /></div>
+  <section id="magazine">
+    <div class="section-header">
+      <div>
+        <div class="section-label fade-in">Magazine</div>
+        <h2 class="fade-in">Jewellery Reading, <br>il magazine sul <em>gioiello contemporaneo</em></h2>
       </div>
-      </div>
+      <p class="section-intro fade-in">Jewellery Reading è il progetto editoriale di Alessia Semeraro, pubblicato ogni settimana su Substack. Le riflessioni nascono dalla sua duplice esperienza, di designer di gioielli contemporanei e di consulente nelle grandi maison del gioiello di lusso: ogni articolo parte da una storia vera e si chiede che cosa racconta un gioiello di chi lo indossa.</p>
     </div>
-    <p class="gallery-hint fade-in">Trascina per scorrere</p>
+    <div class="magazine-grid">
+      <a class="magazine-card fade-in" href="https://jewelleryreading.substack.com/p/tre-motivi-per-cui-dovresti-indossare" target="_blank" rel="noopener">
+        <div class="magazine-img"><img src="images/articolo-tre-motivi-indossare-gioielli.jpg" alt="Tre motivi per indossare i tuoi gioielli, articolo di Alessia Semeraro" loading="lazy" /></div>
+        <h3>Tre motivi per cui dovresti indossare i tuoi gioielli (non lasciarli nel cassetto!)</h3>
+        <span class="magazine-author">by Alessia Semeraro</span>
+        <p>La memoria, la presenza e Theresa May</p>
+        <span class="magazine-link">Leggi l'articolo</span>
+      </a>
+      <a class="magazine-card fade-in" href="https://jewelleryreading.substack.com/p/jewellery-reading-cosa-significa" target="_blank" rel="noopener">
+        <div class="magazine-img"><img src="images/articolo-jewellery-reading-cosa-significa-leggere-un-gioiello.jpg" alt="Jewellery Reading, cosa significa leggere un gioiello, articolo di Alessia Semeraro" loading="lazy" /></div>
+        <h3>Jewellery Reading. Cosa significa leggere un gioiello.</h3>
+        <span class="magazine-author">by Alessia Semeraro</span>
+        <p>Vent'anni di designer, una maison di gioielleria a Londra, e il momento in cui ho capito cosa stavo davvero costruendo</p>
+        <span class="magazine-link">Leggi l'articolo</span>
+      </a>
+      <a class="magazine-card fade-in" href="https://jewelleryreading.substack.com/p/ma-lo-sai-come-nata-lagc" target="_blank" rel="noopener">
+        <div class="magazine-img"><img src="images/articolo-come-e-nata-agc-gioiello-contemporaneo.jpg" alt="Com'è nata AGC, associazione italiana del gioiello contemporaneo, articolo di Alessia Semeraro" loading="lazy" /></div>
+        <h3>Ma lo sai com'è nata l'AGC?</h3>
+        <span class="magazine-author">by Alessia Semeraro</span>
+        <p>Quando sei orafi italiani diedero vita all'Associazione Italiana del Gioiello Contemporaneo</p>
+        <span class="magazine-link">Leggi l'articolo</span>
+      </a>
+      <a class="magazine-card fade-in" href="https://jewelleryreading.substack.com/p/il-vestito-lo-scegli-per-gli-altri" target="_blank" rel="noopener">
+        <div class="magazine-img"><img src="images/articolo-vestito-gioiello-per-te.jpg" alt="Il vestito lo scegli per gli altri, il gioiello per te, articolo di Alessia Semeraro" loading="lazy" /></div>
+        <h3>Il vestito lo scegli per gli altri, il gioiello per te</h3>
+        <span class="magazine-author">by Alessia Semeraro</span>
+        <p>Perché dedichiamo ore a un abito e pochi minuti a ciò che ci accompagna per anni</p>
+        <span class="magazine-link">Leggi l'articolo</span>
+      </a>
+      <a class="magazine-card fade-in" href="https://jewelleryreading.substack.com/p/il-linguaggio-nascosto-delle-giade" target="_blank" rel="noopener">
+        <div class="magazine-img"><img src="images/articolo-linguaggio-nascosto-delle-giade.jpg" alt="Il linguaggio nascosto delle giade, articolo di Alessia Semeraro" loading="lazy" /></div>
+        <h3>Il linguaggio nascosto delle giade</h3>
+        <span class="magazine-author">by Alessia Semeraro</span>
+        <p>Chi sceglie la giada non sceglie mai per caso</p>
+        <span class="magazine-link">Leggi l'articolo</span>
+      </a>
+    </div>
+    <div class="magazine-cta fade-in">
+      <a href="https://jewelleryreading.substack.com" class="hero-cta" target="_blank" rel="noopener">Leggi tutti gli articoli su Substack</a>
+    </div>
   </section>
 
   <div class="full-rule"></div>
 
   <section id="contatti">
     <div class="contact-left fade-in">
-      <h2>Parliamo<br>del <em>progetto</em></h2>
-      <p>Per informazioni su gioielli, coaching, AEmotions o qualsiasi cosa ti abbia incuriosita.</p>
+      <h2>Parliamo <br>del <em>progetto</em></h2>
+      <p>Per informazioni su gioielli, Jewellery Reading™, mostre o qualsiasi cosa ti abbia incuriosita.</p>
       <div class="contact-links">
         <a href="https://instagram.com/alessia_semeraro_jewellery" class="contact-link" target="_blank">
           <span class="contact-link-label">Instagram</span>
           <span class="contact-link-value">@alessia_semeraro_jewellery</span>
         </a>
-        <a href="https://facebook.com/alessia_semeraro_jewellery" class="contact-link" target="_blank">
+        <a href="https://www.facebook.com/alessiajewellery/" class="contact-link" target="_blank">
           <span class="contact-link-label">Facebook</span>
-          <span class="contact-link-value">alessia_semeraro_jewellery</span>
+          <span class="contact-link-value">Alessia Semeraro Jewellery</span>
+        </a>
+        <a href="https://jewelleryreading.substack.com/" class="contact-link" target="_blank" rel="noopener">
+          <span class="contact-link-label">Substack</span>
+          <span class="contact-link-value">jewelleryreading.substack.com</span>
         </a>
         <a href="https://wa.me/393513023448" class="contact-link" target="_blank">
           <span class="contact-link-label">WhatsApp</span>
@@ -868,8 +952,33 @@
   </section>
 
   <footer>
-    <span class="footer-copy">&copy; 2026 Alessia Semeraro — Il Cielo Sopra. Contemporary Jewellery &amp; Coaching.</span>
-    <span class="footer-tagline">the sky beyond</span>
+    <div class="footer-main">
+      <div class="footer-left">
+        <a href="#hero" class="footer-logo">Il Cielo Sopra</a>
+        <span class="footer-by">di Alessia Semeraro</span>
+        <p class="footer-value">Gioielli contemporanei con un significato e il Jewellery Reading™ per scegliere ciò che davvero conta.</p>
+        <p class="footer-place">Contemporary Jewellery Designer in Italia e online</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/alessia_semeraro_jewellery" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/brands/instagram.svg" alt="Instagram" width="20" height="20" /></a>
+          <a href="https://www.facebook.com/alessiajewellery/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/brands/facebook.svg" alt="Facebook" width="20" height="20" /></a>
+          <a href="https://www.linkedin.com/in/alessiasemeraro/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/brands/linkedin.svg" alt="LinkedIn" width="20" height="20" /></a>
+          <a href="https://jewelleryreading.substack.com/" target="_blank" rel="noopener" aria-label="Substack" title="Substack"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/substack.svg" alt="Substack" width="20" height="20" /></a>
+          <a href="https://wa.me/393513023448" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/brands/whatsapp.svg" alt="WhatsApp" width="20" height="20" /></a>
+          <a href="mailto:info@alessiasemeraro.com" aria-label="Email" title="Email"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a4540" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6l8.5 7 8.5-7"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-right">
+        <a href="#il-progetto">Il progetto</a>
+        <a href="#chi-sono">Chi sono</a>
+        <a href="#collezioni-gioielli">Collezioni gioielli</a>
+        <a href="#mostre">Mostre</a>
+        <a href="#jewellery-reading">Jewellery Reading</a>
+        <a href="#magazine">Magazine</a>
+        <a href="#contatti">Contatti</a>
+      </div>
+    </div>
+    <p class="footer-shortcut"><a href="https://wa.me/393513023448" target="_blank" rel="noopener">Vuoi scegliere il gioiello giusto per te? Scrivimi su WhatsApp</a></p>
+    <div class="footer-socket">&copy; 2026 Il Cielo Sopra di Alessia Semeraro · P. IVA 03182550305</div>
   </footer>
 
   <script>
@@ -896,17 +1005,6 @@
       }
     });
 
-    const gallery = document.getElementById('galleryTrack');
-    let isDown = false, startX, scrollLeft;
-    gallery.addEventListener('mousedown', (e) => { isDown = true; startX = e.pageX - gallery.offsetLeft; scrollLeft = gallery.scrollLeft; });
-    gallery.addEventListener('mouseleave', () => isDown = false);
-    gallery.addEventListener('mouseup', () => isDown = false);
-    gallery.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - gallery.offsetLeft;
-      gallery.scrollLeft = scrollLeft - (x - startX) * 1.5;
-    });
   </script>
 </body>
 </html>
