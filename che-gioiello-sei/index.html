@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Che gioiello sei? Il quiz di Jewellery Reading</title>
+  <meta name="description" content="Cinque domande per scoprire il gioiello che racconta chi sei, con un consiglio sulle collezioni di Alessia Semeraro." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ilcielosopra.com/che-gioiello-sei/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #f7f4ef;
+      --cream-dark: #ede9e1;
+      --ink: #1a1814;
+      --ink-mid: #4a4540;
+      --ink-light: #8a8178;
+      --brass: #b8975a;
+      --brass-light: #d4b47c;
+      --white: #fdfcfa;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--cream); color: var(--ink); font-family: 'Jost', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.7; }
+    a { color: inherit; }
+    .top { display: flex; justify-content: space-between; align-items: center; padding: 22px 40px; border-bottom: 1px solid var(--cream-dark); }
+    .logo { font-family: 'Jost', sans-serif; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brass); text-decoration: none; }
+    .back { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: var(--ink-mid); }
+    .back:hover { color: var(--brass); }
+    main { max-width: 680px; margin: 0 auto; padding: 36px 28px 40px; }
+    .label { font-weight: 500; font-size: 0.85rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brass); }
+    h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.6rem, 7vw, 3.6rem); line-height: 1.1; margin: 10px 0 12px; }
+    h1 em, h2 em { font-style: italic; color: var(--brass); }
+    .intro { font-size: 1rem; color: var(--ink-mid); margin-bottom: 22px; }
+    .dots { display: flex; gap: 8px; margin-bottom: 26px; }
+    .dot { width: 28px; height: 2px; background: var(--cream-dark); }
+    .dot.done { background: var(--brass); }
+    .qnum { font-weight: 500; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-light); }
+    .qtext { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.75rem; line-height: 1.25; margin: 8px 0 22px; }
+    .opt { display: flex; gap: 16px; align-items: baseline; width: 100%; text-align: left; background: var(--white); border: 1px solid var(--cream-dark); padding: 16px 20px; margin-bottom: 10px; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1rem; color: var(--ink); cursor: pointer; transition: border-color .2s, background .2s; }
+    .opt:hover, .opt:focus-visible { border-color: var(--brass); outline: none; }
+    .opt b { font-weight: 500; color: var(--brass); letter-spacing: 0.1em; }
+    .result { display: none; }
+    .result h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 2.4rem; line-height: 1.15; margin: 10px 0 18px; }
+    .result p { font-size: 1rem; color: var(--ink-mid); margin-bottom: 16px; }
+    .result .closing { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.35rem; line-height: 1.4; color: var(--brass); }
+    .cta { display: inline-block; font-weight: 500; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--brass); padding-bottom: 4px; margin: 4px 0 8px; }
+    .cta:hover { color: var(--brass); }
+    .reading { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--cream-dark); }
+    .reading p { margin-bottom: 10px; }
+    .restart { background: none; border: none; font-family: 'Jost', sans-serif; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); cursor: pointer; margin-top: 16px; }
+    .restart:hover { color: var(--brass); }
+    .about-quiz { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--cream-dark); }
+    .about-quiz p { font-size: 0.95rem; color: var(--ink-mid); }
+    .about-quiz a { text-decoration: none; }
+    .about-quiz a:hover { color: var(--brass); }
+    footer { text-align: center; padding: 26px 20px; border-top: 1px solid var(--cream-dark); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-light); }
+    @media (max-width: 600px) {
+      .top { padding: 18px 22px; }
+      main { padding: 40px 22px 48px; }
+      .qtext { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <a href="/" class="logo">Alessia Semeraro</a>
+    <a href="/#jewellery-reading" class="back">Torna al sito</a>
+  </header>
+
+  <main>
+    <div class="label">Jewellery Reading</div>
+    <h1>Che gioiello <em>sei?</em></h1>
+    <p class="intro">Cinque domande per scoprire il tuo gioiello.</p>
+
+    <section id="quiz" aria-live="polite">
+      <div class="dots" id="dots"></div>
+      <div class="qnum" id="qnum"></div>
+      <h2 class="qtext" id="qtext"></h2>
+      <div id="opts"></div>
+    </section>
+
+    <section class="result" id="result" aria-live="polite">
+      <div class="label">Il tuo gioiello</div>
+      <h2 id="rtitle"></h2>
+      <p id="rtext"></p>
+      <p class="closing" id="rclosing"></p>
+      <a class="cta" id="rlink" href="/#collezioni-gioielli"></a>
+      <div class="reading">
+        <p>Vuoi andare più a fondo? Con il Jewellery Reading scegliamo insieme il gioiello giusto per te.</p>
+        <a class="cta" id="rwa" href="https://wa.me/393513023448" target="_blank" rel="noopener">Prenota un Jewellery Reading</a>
+      </div>
+      <button class="restart" type="button" onclick="start()">Rifai il quiz</button>
+    </section>
+    <section class="about-quiz">
+      <p>Ogni gioiello che scegliamo dice qualcosa di noi. Questo quiz è un modo leggero per cominciare a capire quale gioiello senti tuo: cinque domande sui tuoi gusti, i tuoi luoghi, il tuo modo di vivere. Il risultato ti suggerisce una delle collezioni di Alessia Semeraro. Per andare più a fondo c'è il <a href="/#jewellery-reading">Jewellery Reading</a>, il metodo che legge i gioielli che hai già per arrivare a quello giusto per te.</p>
+    </section>
+  </main>
+
+  <footer>Alessia Semeraro · Designer di gioielli contemporanei · <a href="/">ilcielosopra.com</a></footer>
+
+  <script>
+    var questions = [
+      { q: "Qual è il gioiello che senti più tuo?", a: ["Mi rende elegante e senza tempo", "Racconta qualcosa di unico di me", "È facile da indossare e sta bene con tutto"] },
+      { q: "Se potessi partire domani, dove andresti?", a: ["Vienna, una raffinata città d'arte", "Marrakech, lontana e anticonvenzionale", "Provenza, semplice, autentica, nella natura"] },
+      { q: "Quale tipo di lavoro senti più vicino a te?", a: ["Strutturato e ben organizzato", "Creativo o fuori dagli schemi", "Pratico e flessibile"] },
+      { q: "Dove ti senti più a casa?", a: ["Al Victoria & Albert Museum", "In un mercatino delle pulci", "In una casa sull'albero nel bosco"] },
+      { q: "Cosa bevi di solito?", a: ["Gin Tonic", "Spritz", "Coca Cola"] }
+    ];
+    var results = {
+      A: { n: "Eleganza senza tempo", t: "Eleganza <em>senza tempo.</em>", p: "Hai un senso raffinato e naturale per ciò che è armonioso e duraturo. Il tuo stile è classico, mai eccessivo, costruito su scelte ponderate e cura del dettaglio.", c: "Per te un gioiello non è un accessorio. È un segno di stile, discreto ma inconfondibile.", l: "Scopri la Ayen Collection" },
+      B: { n: "Creativa e singolare", t: "Creativa <em>e singolare.</em>", p: "Hai uno spirito libero e originale. Ami distinguerti, sperimentare, comunicare chi sei attraverso ciò che scegli. Non segui le regole, le reinventi.", c: "Per te un gioiello è pura espressione della personalità.", l: "Scopri la Jade Collection" },
+      C: { n: "Naturale e autentica", t: "Naturale <em>e autentica.</em>", p: "Ti guidano la semplicità e la verità delle cose. Ti senti a casa in ciò che è essenziale, spontaneo, non costruito. Il tuo stile è leggero ma profondo.", c: "Scegli gioielli che accompagnano la tua quotidianità, con discrezione e significato.", l: "Scopri la Lib Collection" }
+    };
+    var letters = ["A", "B", "C"], step, answers;
+    function start() {
+      step = 0; answers = [];
+      document.getElementById("result").style.display = "none";
+      document.getElementById("quiz").style.display = "block";
+      show();
+    }
+    function show() {
+      var d = document.getElementById("dots"); d.innerHTML = "";
+      for (var i = 0; i < questions.length; i++) {
+        var s = document.createElement("span"); s.className = "dot" + (i <= step ? " done" : ""); d.appendChild(s);
+      }
+      document.getElementById("qnum").textContent = "Domanda " + (step + 1) + " di " + questions.length;
+      document.getElementById("qtext").textContent = questions[step].q;
+      var o = document.getElementById("opts"); o.innerHTML = "";
+      questions[step].a.forEach(function (txt, i) {
+        var b = document.createElement("button"); b.type = "button"; b.className = "opt";
+        var l = document.createElement("b"); l.textContent = letters[i];
+        var t = document.createElement("span"); t.textContent = txt;
+        b.appendChild(l); b.appendChild(t);
+        b.onclick = function () { choose(letters[i]); };
+        o.appendChild(b);
+      });
+    }
+    function choose(x) {
+      answers.push(x); step++;
+      if (step < questions.length) { show(); } else { finish(); }
+    }
+    function finish() {
+      var n = { A: 0, B: 0, C: 0 };
+      answers.forEach(function (x) { n[x]++; });
+      var max = Math.max(n.A, n.B, n.C);
+      var top = letters.filter(function (x) { return n[x] === max; });
+      var win = top.length === 1 ? top[0] : (top.indexOf(answers[0]) > -1 ? answers[0] : top[0]);
+      var r = results[win];
+      document.getElementById("rtitle").innerHTML = r.t;
+      document.getElementById("rtext").textContent = r.p;
+      document.getElementById("rclosing").textContent = r.c;
+      document.getElementById("rlink").textContent = r.l;
+      var msg = "Buongiorno Alessia, ho fatto il quiz \"Che gioiello sei?\" e il mio risultato è " + r.n + ". Vorrei informazioni sul Jewellery Reading.";
+      document.getElementById("rwa").href = "https://wa.me/393513023448?text=" + encodeURIComponent(msg);
+      document.getElementById("quiz").style.display = "none";
+      document.getElementById("result").style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    start();
+  </script>
+</body>
+</html>

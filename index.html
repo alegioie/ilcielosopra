@@ -137,6 +137,8 @@
       transition: color 0.3s;
     }
     .hero-cta:hover { color: var(--brass); }
+    .quiz-invito { margin: 14px 0 0; font-size: 1rem; font-weight: 500; color: var(--ink); }
+    .quiz-invito .quiz-cta { margin-left: 6px; }
     .hero-right { position: relative; overflow: hidden; }
     .hero-right img {
       width: 100%;
@@ -530,7 +532,7 @@
       margin-bottom: 12px;
       font-style: italic;
     }
-    .workshop-creativi { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--brass); max-width: 700px; }
+    .workshop-creativi { margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--brass); max-width: 700px; }
     .workshop-creativi h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: 1.6rem; color: var(--ink); margin: 16px 0; }
     .workshop-cta { margin-top: 24px; }
     .workshop-creativi p { font-size: 1.0rem; color: var(--ink-mid); }
@@ -659,6 +661,9 @@
     .footer-shortcut { margin: 12px 0 20px; font-family: 'Cormorant Garamond', serif; font-style: normal; font-size: 1.3rem; }
     .footer-shortcut a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--brass); padding-bottom: 2px; }
     .footer-shortcut a:hover { color: var(--brass); }
+    .footer-quiz { margin-top: -8px; font-family: 'Jost', sans-serif; }
+    .footer-quiz a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass); border-bottom: none; }
+    .footer-quiz a:hover { color: var(--ink); }
     .footer-socket { border-top: 1px solid var(--cream-dark); padding-top: 20px; font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.7rem; letter-spacing: 0.12em; color: var(--ink-light); }
     .full-rule { width: 100%; height: 1px; background: linear-gradient(to right, transparent, var(--cream-dark), transparent); }
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
@@ -717,6 +722,90 @@
     #collezioni-gioielli .section-intro { align-self: end; padding-top: 0; padding-bottom: 6px; }
     @media (max-width: 600px) { .hero-role { font-size: 0.85rem; letter-spacing: 0.1em; } .hero-scroll { display: none; } }
   </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Si possono avere i gioielli su ordinazione?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sì: se un modello non è disponibile, viene realizzato su ordinazione. Molti modelli Ayen si possono avere anche interamente in argento, su commissione."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le collane della Jade Collection sono sempre disponibili?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ogni collana della Jade Collection è un pezzo unico perché ogni giada esiste una sola volta. Per questo non si possono realizzare su ordinazione e la scelta dipende dalle giade presenti in quel momento: scrivi ad Alessia per scoprire quali collane sono disponibili."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Come posso vedere tutti i gioielli e i prezzi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Molti gioielli, con i prezzi, sono visibili nel catalogo del profilo WhatsApp di Alessia. Puoi anche richiedere il catalogo completo della collezione che ti interessa, per esempio Ayen Collection o Jade Collection, scrivendo su WhatsApp o con un messaggio privato su Instagram."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Come posso vedere i gioielli dal vivo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Su appuntamento, oppure nei negozi che ospitano una selezione dei suoi gioielli. Scrivi ad Alessia per sapere dove trovarli in questo momento."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://ilcielosopra.com/#alessia",
+      "name": "Alessia Semeraro",
+      "jobTitle": "Designer di gioielli contemporanei",
+      "description": "Contemporary Jewellery Designer, ideatrice del metodo Jewellery Reading.",
+      "url": "https://ilcielosopra.com/",
+      "image": "https://ilcielosopra.com/images/alessia-semeraro-contemporary-jewellery-designer.jpg",
+      "email": "mailto:info@alessiasemeraro.com",
+      "nationality": {
+        "@type": "Country",
+        "name": "Italia"
+      },
+      "knowsAbout": [
+        "gioielli contemporanei",
+        "gioiello di ricerca",
+        "Jewellery Reading",
+        "design del gioiello"
+      ],
+      "sameAs": [
+        "https://instagram.com/alessia_semeraro_jewellery",
+        "https://www.facebook.com/alessiajewellery/",
+        "https://www.linkedin.com/in/alessiasemeraro/",
+        "https://jewelleryreading.substack.com/",
+        "https://www.alessiasemeraro.com/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ilcielosopra.com/#sito",
+      "name": "Il Cielo Sopra",
+      "url": "https://ilcielosopra.com/",
+      "inLanguage": "it",
+      "author": {
+        "@id": "https://ilcielosopra.com/#alessia"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -917,11 +1006,12 @@
         <p>Un incontro individuale, online o in presenza, per scoprire il gioiello giusto per te: per un'occasione speciale, per segnare un momento di passaggio o per conoscerti meglio.</p>
       </div>
     </div>
+    <p class="quiz-invito fade-in">Per iniziare a scegliere in modo leggero: <a href="/che-gioiello-sei/" class="hero-cta quiz-cta">Fai il quiz: che gioiello sei?</a></p>
     <div class="workshop-creativi fade-in">
       <div class="section-label">Per chi crea gioielli</div>
       <h3>Workshop per designer di gioielli: "Costruisci la tua collezione di gioielli"</h3>
       <p>Un workshop individuale per designer e creativi che vogliono dare forma a una collezione coerente, dall'idea alla proposta finale.</p>
-      <a href="mailto:info@alessiasemeraro.com?subject=Workshop%20Costruisci%20la%20tua%20collezione%20di%20gioielli" class="hero-cta workshop-cta">Ti interessa il workshop?</a>
+      <a href="https://wa.me/393513023448?text=Buongiorno%20Alessia%2C%20vorrei%20informazioni%20sul%20workshop%20%22Costruisci%20la%20tua%20collezione%20di%20gioielli%22." class="hero-cta workshop-cta" target="_blank" rel="noopener">Ti interessa il workshop?</a>
     </div>
   </section>
 
@@ -1042,6 +1132,7 @@
       </div>
     </div>
     <p class="footer-shortcut"><a href="https://wa.me/393513023448" target="_blank" rel="noopener">Vuoi scegliere il gioiello giusto per te? Scrivimi su WhatsApp</a></p>
+    <p class="footer-shortcut footer-quiz"><a href="/che-gioiello-sei/">Che gioiello sei? Fai il quiz</a></p>
     <div id="faq">
       <div class="section-label fade-in">FAQ</div>
       <h2 class="fade-in">Domande <em>frequenti</em></h2>
